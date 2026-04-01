@@ -1,23 +1,1072 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matías Toro Ipinza</title>
+<meta name="description" content="Academic page of Matías Toro Ipinza, Assistant Professor at University of Chile. Research on gradual typing, differential privacy, and programming languages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f7;
+  --fg: #1a1a1a;
+  --fg-muted: #6b6b6b;
+  --accent: #8b2500;
+  --accent-light: #a83a1a;
+  --border: #e5e2de;
+  --card-bg: #fff;
+  --section-label: #999;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --max-w: 860px;
+}
 
-<div class="home">
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <h1 class="page-heading">Posts</h1>
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+/* ── Layout ─────────────────────────── */
+.page {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+/* ── Header ─────────────────────────── */
+header {
+  padding: 60px 0 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: start;
+  border-bottom: 1px solid var(--border);
+}
+header .info h1 {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+header .info .subtitle {
+  margin-top: 8px;
+  font-size: 1.05rem;
+  color: var(--fg-muted);
+  font-weight: 300;
+}
+header .photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
 
+/* ── Contact bar ────────────────────── */
+.contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+  color: var(--fg-muted);
+}
+.contact-bar a { color: var(--fg-muted); }
+.contact-bar a:hover { color: var(--accent); }
+.contact-bar span::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.contact-bar span:first-child::before { display: none; }
+
+/* ── Section labels ─────────────────── */
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--section-label);
+  margin-bottom: 20px;
+  padding-top: 48px;
+  font-weight: 500;
+}
+
+/* ── Research domains grid ──────────── */
+.domains {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+.domain h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.domain p {
+  font-size: 0.88rem;
+  color: var(--fg-muted);
+  line-height: 1.5;
+}
+
+/* ── Bio / research lines ──────────── */
+.bio {
+  font-size: 0.95rem;
+  color: var(--fg);
+  line-height: 1.75;
+  max-width: 680px;
+}
+
+/* ── Publications ───────────────────── */
+.pub-year-group { margin-bottom: 28px; }
+.pub-year-label {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--section-label);
+  margin-bottom: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.pub {
+  margin-bottom: 20px;
+  padding-left: 16px;
+  border-left: 2px solid transparent;
+  transition: border-color 0.15s;
+}
+.pub:hover { border-left-color: var(--accent); }
+.pub .pub-venue {
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 2px;
+}
+.pub h4 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.35;
+  margin-bottom: 3px;
+}
+.pub .pub-authors {
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+}
+.pub .pub-links {
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
+.pub .pub-links a {
+  margin-right: 12px;
+  color: var(--fg-muted);
+  font-weight: 500;
+}
+.pub .pub-links a:hover { color: var(--accent); }
+
+/* ── Cards (projects, admin, etc.) ─── */
+.card-list { list-style: none; }
+.card-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.92rem;
+}
+.card-list li:last-child { border-bottom: none; }
+.card-list .card-title {
+  font-weight: 500;
+}
+.card-list .card-meta {
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  margin-top: 2px;
+}
+
+/* ── Students ──────────────────────── */
+.student-group { margin-bottom: 24px; }
+.student-group h3 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg-muted);
+  margin-bottom: 10px;
+}
+.student-list { list-style: none; }
+.student-list li {
+  padding: 8px 0;
+  font-size: 0.92rem;
+  display: flex;
+  gap: 8px;
+}
+.student-list .level-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 3px;
+  background: var(--border);
+  color: var(--fg-muted);
+  white-space: nowrap;
+  align-self: start;
+  margin-top: 3px;
+}
+.student-list .level-badge.phd { background: var(--accent); color: #fff; }
+.student-list .level-badge.msc { background: #555; color: #fff; }
+
+/* ── Teaching ──────────────────────── */
+.course-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.course-card {
+  padding: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.course-card .code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.course-card .course-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.course-card .course-years {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  margin-top: 4px;
+}
+
+/* ── PC service ────────────────────── */
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.service-tag {
+  font-size: 0.82rem;
+  padding: 4px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--fg);
+}
+
+/* ── Impact banner ─────────────────── */
+.impact-banner {
+  display: flex;
+  gap: 48px;
+  padding: 24px 0;
+  margin-bottom: 8px;
+}
+.impact-stat .number {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--accent);
+}
+.impact-stat .label {
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Footer ─────────────────────────── */
+footer {
+  margin-top: 64px;
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  text-align: center;
+}
+
+/* ── Collapsible sections ──────────── */
+details summary {
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+  padding: 8px 0;
+  list-style: none;
+}
+details summary::before {
+  content: '+ ';
+  font-family: var(--font-mono);
+  color: var(--accent);
+}
+details[open] summary::before { content: '- '; }
+details summary::-webkit-details-marker { display: none; }
+
+/* ── Responsive ─────────────────────── */
+@media (max-width: 640px) {
+  header { grid-template-columns: 1fr; }
+  header .photo { width: 100px; height: 100px; order: -1; }
+  header .info h1 { font-size: 2.2rem; }
+  .domains { grid-template-columns: 1fr; }
+  .course-grid { grid-template-columns: 1fr; }
+  .impact-banner { gap: 24px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ── HEADER ──────────────────────────── -->
+<header>
+  <div class="info">
+    <h1>Matías Toro Ipinza</h1>
+    <div class="subtitle">Assistant Professor in Computer Science<br>University of Chile &middot; <a href="https://pleiad.cl">PLEIAD Lab</a></div>
+  </div>
+  <img class="photo" src="http://users.dcc.uchile.cl/~mtoro/matias_toro_2019.jpg" alt="Matías Toro Ipinza">
+</header>
+
+<!-- ── CONTACT BAR ────────────────────── -->
+<div class="contact-bar">
+  <span><a href="mailto:mtoro@dcc.uchile.cl">mtoro@dcc.uchile.cl</a></span>
+  <span>Blanco Encalada 2120, of. 325, Santiago</span>
+  <span><a href="https://dblp.org/pid/169/6836">DBLP</a></span>
+  <span><a href="https://scholar.google.com/citations?user=dTNWJH0AAAAJ">Google Scholar</a></span>
+  <span><a href="https://github.com/matiastoro">GitHub</a></span>
 </div>
+
+
+<!-- ── RESEARCH DOMAINS ───────────────── -->
+<div class="section-label">Research Domains</div>
+<div class="domains">
+  <div class="domain"><h3>Gradual Typing</h3><p>Designing sound bridges between static safety and dynamic flexibility in modern languages.</p></div>
+  <div class="domain"><h3>Differential Privacy</h3><p>Language-level support for privacy-preserving data analysis with formal guarantees.</p></div>
+  <div class="domain"><h3>Security Typing</h3><p>Type systems that enforce confidentiality and integrity by construction.</p></div>
+  <div class="domain"><h3>Formal Methods</h3><p>Mechanized proofs and formal semantics for programming language design.</p></div>
+</div>
+
+<!-- ── ABOUT ───────────────────────────── -->
+<div class="section-label">About</div>
+<div class="bio">
+<p>Mi investigación se sitúa en la intersección entre el diseño de lenguajes de programación y la protección de datos sensibles, con un enfoque en técnicas formales. Estudio cómo adoptar gradualmente sistemas de tipos avanzados (como tipos lineales o probabilísticos) para garantizar propiedades de seguridad y privacidad. En paralelo, exploro técnicas de privacidad diferencial y anonimización, aplicadas tanto a la ingeniería de software como al análisis de datos reales, con aplicaciones en inteligencia artificial y procesamiento de lenguaje natural. Mi trabajo combina contribuciones teóricas formales con aplicaciones empíricas, promoviendo sistemas confiables por diseño.</p>
+</div>
+
+<!-- ── PUBLICATIONS ───────────────────── -->
+<div class="section-label">Publications</div>
+
+<div class="pub-year-group">
+  <div class="pub-year-label">2025</div>
+
+  <div class="pub">
+    <div class="pub-venue">CSF</div>
+    <h4>Gradual Sensitivity Typing</h4>
+    <div class="pub-authors">Damián Árquez, <strong>Matías Toro</strong>, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="http://pleiad.dcc.uchile.cl/papers/2025/arquezAl-csf2025.pdf">PDF</a>
+      <a href="https://doi.ieeecomputersociety.org/10.1109/CSF64896.2025.00021">DOI</a>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-venue">ESOP</div>
+    <h4>Elucidating Type Conversions in SQL Engines</h4>
+    <div class="pub-authors">Wenjia Ye, <strong>Matías Toro</strong>, Claudio Gutierrez, Bruno C. d. S. Oliveira, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="http://pleiad.dcc.uchile.cl/papers/2025/yeAl-esop2025.pdf">PDF</a>
+      <a href="https://doi.org/10.1007/978-3-031-91118-7_16">DOI</a>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-venue">SoftwareX</div>
+    <h4>Visualizing the semantics of gradual languages with Gredex</h4>
+    <div class="pub-authors"><strong>Matías Toro</strong>, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="https://doi.org/10.1016/j.softx.2025.102425">PDF</a>
+      <a href="https://doi.org/10.1016/j.softx.2025.102425">DOI</a>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-venue">Travel Behaviour and Society</div>
+    <h4>Reducing urban speed limits decreases work-related traffic injury severity: Evidence from Santiago, Chile</h4>
+    <div class="pub-authors">Eduardo Graells-Garrido, <strong>Matías Toro</strong>, Gabriel Mansilla, Matías Nicolai, Santiago Mansilla, Jocelyn Dunstan</div>
+    <div class="pub-links">
+      <a href="http://pleiad.dcc.uchile.cl/papers/2025/graellsAl-tbs2025.pdf">PDF</a>
+      <a href="https://doi.org/10.1016/j.tbs.2025.101034">DOI</a>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-venue">OOPSLA 2025</div>
+    <h4>Flexible and Expressive Typed Path Patterns for GQL</h4>
+    <div class="pub-authors">Wenjia Ye, <strong>Matías Toro</strong>, Tomás Díaz, Bruno C. d. S. Oliveira, Manuel Rigger, Claudio Gutierrez, Domagoj Vrgoč</div>
+    <div class="pub-links">
+      
+      <a href="https://doi.org/10.1145/3763061">DOI</a>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-venue">ICFP 2025</div>
+    <h4>Robust Dynamic Embedding for Gradual Typing</h4>
+    <div class="pub-authors">Koen Jacobs, <strong>Matías Toro</strong>, Nicolas Tabareau, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="http://pleiad.dcc.uchile.cl/papers/2025/jacobsAl-icfp2025.pdf">PDF</a>
+      <a href="https://doi.org/10.1145/3747507">DOI</a>
+    </div>
+  </div>
+</div>
+
+<div class="pub-year-group">
+  <div class="pub-year-label">2024</div>
+
+  <div class="pub">
+    <div class="pub-venue">CACM</div>
+    <h4>Gradual Differentially Private Programming</h4>
+    <div class="pub-authors"><strong>Matías Toro</strong>, Federico Olmedo, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="http://pleiad.dcc.uchile.cl/papers/2024/toroAl-cacm2024.pdf">PDF</a>
+      <a href="https://doi.org/10.1145/3653328">DOI</a>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-venue">OOPSLA 2024</div>
+    <h4>Merging Gradual Typing</h4>
+    <div class="pub-authors">Wenjia Ye, Bruno C. d. S. Oliveira, <strong>Matías Toro</strong></div>
+    <div class="pub-links">
+      <a href="http://pleiad.dcc.uchile.cl/papers/2024/yeAl-oopsla2024.pdf">PDF</a>
+      <a href="https://doi.org/10.1145/3689734">DOI</a>
+    </div>
+  </div>
+</div>
+
+<div class="pub-year-group">
+  <div class="pub-year-label">2023</div>
+
+  <div class="pub">
+    <div class="pub-venue">TOPLAS</div>
+    <h4>Contextual Linear Types for Differential Privacy</h4>
+    <div class="pub-authors"><strong>Matías Toro</strong>, David Darais, Chike Abuah, Joe Near, Damián Árquez, Federico Olmedo, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="http://pleiad.dcc.uchile.cl/papers/2023/toroAl-toplas2023.pdf">PDF</a>
+      <a href="https://dl.acm.org/doi/10.1145/3589207">DOI</a>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-venue">OOPSLA 2023</div>
+    <h4>A Gradual Probabilistic Lambda Calculus</h4>
+    <div class="pub-authors">Wenjia Ye, <strong>Matías Toro</strong>, Federico Olmedo</div>
+    <div class="pub-links">
+      <a href="http://pleiad.dcc.uchile.cl/papers/2023/yeAl-oopsla2023.pdf">PDF</a>
+      <a href="https://dl.acm.org/doi/10.1145/3586036">DOI</a>
+    </div>
+  </div>
+</div>
+
+<div class="pub-year-group">
+  <div class="pub-year-label">2022</div>
+
+  <div class="pub">
+    <div class="pub-venue">JACM</div>
+    <h4>Gradual System F</h4>
+    <div class="pub-authors">Elizabeth Labrada, <strong>Matías Toro</strong>, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="http://pleiad.dcc.uchile.cl/papers/2022/labradaAl-jacm2022.pdf">PDF</a>
+      <a href="https://doi.org/10.1145/3555986">DOI</a>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-venue">OOPSLA 20022.</div>
+    <h4>Plausible Sealing for Gradual Parametricity</h4>
+    <div class="pub-authors">Elizabeth Labrada, <strong>Matías Toro</strong>, Éric Tanter, Dominique Devriese</div>
+    <div class="pub-links">
+      <a href="http://pleiad.dcc.uchile.cl/papers/2022/labradaAl-oopsla2022.pdf">PDF</a>
+      <a href="https://doi.org/10.1145/3527314">DOI</a>
+    </div>
+  </div>
+</div>
+
+<div class="pub-year-group">
+  <div class="pub-year-label">2020</div>
+
+  <div class="pub">
+    <div class="pub-venue">Science of Computer Programming</div>
+    <h4>Abstracting gradual references</h4>
+    <div class="pub-authors"><strong>Matías Toro</strong>, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="https://doi.org/10.1016/j.scico.2020.102496">PDF</a>
+      <a href="https://doi.org/10.1016/j.scico.2020.102496">DOI</a>
+    </div>
+  </div>
+</div>
+
+<div class="pub-year-group">
+  <div class="pub-year-label">2019</div>
+
+  <div class="pub">
+    <div class="pub-venue">Proceedings of the ACM on Programming Languages</div>
+    <h4>Gradual parametricity, revisited</h4>
+    <div class="pub-authors"><strong>Matías Toro</strong>, Elizabeth Labrada, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="https://doi.org/10.1145/3290330">PDF</a>
+      <a href="https://doi.org/10.1145/3290330">DOI</a>
+    </div>
+  </div>
+</div>
+
+<div class="pub-year-group">
+  <div class="pub-year-label">2018</div>
+
+  <div class="pub">
+    <div class="pub-venue">TOPLAS</div>
+    <h4>Type-Driven Gradual Security with References</h4>
+    <div class="pub-authors"><strong>Matías Toro</strong>, Ronald Garcia, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="https://doi.org/10.1145/3229061">PDF</a>
+      <a href="https://doi.org/10.1145/3229061">DOI</a>
+    </div>
+  </div>
+</div>
+
+<div class="pub-year-group">
+  <div class="pub-year-label">2017</div>
+
+  <div class="pub">
+    <div class="pub-venue">Lecture Notes in Computer Science</div>
+    <h4>A Gradual Interpretation of Union Types</h4>
+    <div class="pub-authors"><strong>Matías Toro</strong>, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="https://doi.org/10.1007/978-3-319-66706-5_19">PDF</a>
+      <a href="https://doi.org/10.1007/978-3-319-66706-5_19">DOI</a>
+    </div>
+  </div>
+</div>
+
+<div class="pub-year-group">
+  <div class="pub-year-label">2015</div>
+
+  <div class="pub">
+    <div class="pub-venue">Proceedings of the 2015 ACM SIGPLAN International Confere...</div>
+    <h4>Customizable gradual polymorphic effects for Scala</h4>
+    <div class="pub-authors"><strong>Matías Toro</strong>, Éric Tanter</div>
+    <div class="pub-links">
+      <a href="https://doi.org/10.1145/2814270.2814315">PDF</a>
+      <a href="https://doi.org/10.1145/2814270.2814315">DOI</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── RESEARCH PROJECTS ──────────────── -->
+<div class="section-label">Research Projects</div>
+<ul class="card-list">
+
+  <li>
+    <div class="card-title">Learning Origin-destination Inference through Cross-source Analytics (LOICA)</div>
+    <div class="card-meta">
+      Fondecyt Regular 2026 &middot; Co-PI
+    </div>
+  </li>
+
+  <li>
+    <div class="card-title">Gradual Differential Privacy: Theory and Applications</div>
+    <div class="card-meta">
+      Fondecyt de Iniciación en Investigación 2025 &middot; PI &middot; <a href="https://comunicaciones.dcc.uchile.cl/news/958-profesores-matias-toro-y-valentin-barriere-se-adjudicaron-fondecyt-de-iniciacion-2025/">link</a>
+    </div>
+  </li>
+
+  <li>
+    <div class="card-title">Privacy-preserving methods for clinical natural language processing in Spanish</div>
+    <div class="card-meta">
+      Fondecyt Regular 2024 &middot; Co-PI
+    </div>
+  </li>
+
+  <li>
+    <div class="card-title">Gradual Abstract Interpretation</div>
+    <div class="card-meta">
+      Proyectos de Investigación Conjunta ANID Chile - DFG Alemania 2022 &middot; PI &middot; <a href="https://ingenieria.uchile.cl/noticias/212487/investigadoresas-fcfm-realizaran-proyectos-con-instituciones-alemanas">link</a>
+    </div>
+  </li>
+
+  <li>
+    <div class="card-title">Evaluación de la distancia recorrida por un trabajador durante el trayecto desde o hacia su trabajo como factor de riesgo de exposición en accidentes de tránsito de Mutual de Seguridad C.Ch.C</div>
+    <div class="card-meta">
+      Proyectos de Investigación e Innovación - Superintendencia de Seguridad Social &middot; Co-PI &middot; <a href="https://www.suseso.cl/619/w3-article-740277.html">link</a>
+    </div>
+  </li>
+</ul>
+
+
+<!-- ── RESEARCH CENTERS ────────────────── -->
+<div class="section-label">Research Centers</div>
+<ul class="card-list">
+
+  <li>
+    <div class="card-title">Instituto Milenio de Fundamento de Datos (IMFD)</div>
+    <div class="card-meta">Investigador Joven &middot; 2025--present</div>
+  </li>
+
+  <li>
+    <div class="card-title">Instituto Milenio de Fundamento de Datos (IMFD)</div>
+    <div class="card-meta">Investigador Colaborador &middot; 2022--2025</div>
+  </li>
+</ul>
+
+<!-- ── STUDENTS ────────────────────────── -->
+<div class="section-label">Students</div>
+
+
+<div class="student-group">
+  <h3>Current Graduate Students</h3>
+  <ul class="student-list">
+
+    <li>
+      <span class="level-badge msc">MSc</span>
+      <div>
+        <strong>Javier Kauer</strong><br>
+        <span style="font-size:0.85rem;color:var(--fg-muted)">Gradual Typing for Objects</span>
+      </div>
+    </li>
+
+    <li>
+      <span class="level-badge msc">MSc</span>
+      <div>
+        <strong>Arturo Felipe Kullmer Schuller</strong><br>
+        <span style="font-size:0.85rem;color:var(--fg-muted)">HIERARCHICAL DIFFERENTIAL PRIVACY FOR THE PUBLICATION OF NATIONAL CENSUS DATA (co-advised with Federico Olmedo)</span>
+      </div>
+    </li>
+
+    <li>
+      <span class="level-badge msc">MSc</span>
+      <div>
+        <strong>Felix Melo</strong><br>
+        <span style="font-size:0.85rem;color:var(--fg-muted)">SYNTHETIC SPANISH MEDICAL TEXT GENERATION USING DIFFERENTIAL PRIVACY (co-advised with Federico Olmedo)</span>
+      </div>
+    </li>
+
+    <li>
+      <span class="level-badge msc">MSc</span>
+      <div>
+        <strong>Gaspar Ricci</strong><br>
+        <span style="font-size:0.85rem;color:var(--fg-muted)">Gradual Abstract Interpretation (co-advised with Éric Tanter)</span>
+      </div>
+    </li>
+
+    <li>
+      <span class="level-badge msc">MSc</span>
+      <div>
+        <strong>Benjamin Hurtado</strong><br>
+        <span style="font-size:0.85rem;color:var(--fg-muted)">Implementing a Decentralized Attribute-Based Messaging System with Partial Linkability Using Attribute-Based Signatures (co-advised with Federico Olmedo)</span>
+      </div>
+    </li>
+
+    <li>
+      <span class="level-badge msc">MSc</span>
+      <div>
+        <strong>Jose Luis Romero</strong><br>
+        <span style="font-size:0.85rem;color:var(--fg-muted)">A Compilation Framework for Gradually-Typed Languages (co-advised with Éric Tanter)</span>
+      </div>
+    </li>
+
+    <li>
+      <span class="level-badge phd">PhD</span>
+      <div>
+        <strong>Damián Arquez</strong><br>
+        <span style="font-size:0.85rem;color:var(--fg-muted)">Flexible Language Support for Differentially-Private Programming (co-advised with Éric Tanter)</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<details>
+  <summary>Current Undergraduate Thesis Students (18)</summary>
+  <ul class="student-list" style="padding-top:8px">
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Diego San Martín</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Optimización de flujo de desarrollo usando agentic AI en Fintech (Chita)</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Daniel Ramirez</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Roadmap de educación</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Antonia Padilla Roco</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Diseño e implementación de catálogo histórico personalizado para sugerencia de proveedores en un marketplace B2B</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Jannis Isabel Cruz</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Practica de título en Buk</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Mikael Gaete López</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Behavior-Preserving SQL Translation with LLMs</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Francisco Gutierrez</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Optimización de flujo de desarrollo usando agentic AI en Fintech</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Andrés Gallardo</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Desarrollo de herramienta de balanceo de charts en Buk</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Benjamín Alonso Ibacache Allan</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Gradual Typing para Python: Privacidad de datos</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Felipe Ignacio Avendaño Araya</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Prototipo de GQL en Rust</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Angelo Alexander Herrera Galaz</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Gradual Typing para Python: semantica eficiente</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Nicolas Lemuñir</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Implementación de intérprete genérico de lenguajes gradualmente tipados</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Jean Paul Duchens Pacheco</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Extensión de un prototipo para GQL</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Jonnathan Stevens</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Desarrollo de un Intérprete para un Lenguaje Gradual Probabilístico</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Juan Valdivia</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Extensión y mejora de una plataforma web y móvil para la gestión de cursos masivos con metodologías grupales</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Benjamín Alonso Ureta Miranda</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Desarrollo de página web para vinculación del DCC con el medio</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Martina Ignacia González Lucero</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Acelerando la Protección de Datos Censales: Versión Paralela del Algoritmo TopDown</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Nicolás Rodrigo Arancibia Aguirre</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Gradual Typing para Python: extendiendo Tyger</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Andrés Calderón</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Extensión de Aplicación multiplataforma para la administración de cursos con salidas de terreno</span></div>
+    </li>
+  </ul>
+</details>
+
+
+<div class="student-group" style="margin-top:16px">
+  <h3>Former Graduate Students</h3>
+  <ul class="student-list">
+
+    <li>
+      <span class="level-badge phd">PhD</span>
+      <div>
+        <strong>Elizabeth Labrada</strong>: Gradual System F (2023) [co-advised with Éric Tanter]
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<details>
+  <summary>Former Undergraduate Thesis Students (19)</summary>
+  <ul class="student-list" style="padding-top:8px">
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Giusseppe Nicolás Rojas Rojas</strong>: TYGER: UN ACERCAMIENTO AL GRADUAL TYPING EN PYTHON</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Carlos Adolfo Ruz Benavides</strong>: Desarrollo de frontend web para proyectos de CC3002</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Romina Fernanda Yael Rodríguez Rodríguez</strong>: Aplicación multiplataforma para la administración de información confidencial en cursos con salidas a terreno (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Arturo Felipe Kullmer Schuller</strong>: Manteniendo la privacidad en los censos nacionales (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Cristóbal Ardiles Quiroz</strong>: TYGER: UNA HERRAMIENTA DE TIPADO ESTÁTICO EXTENSIBLE PARA PYTHON (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Enzo Miguel Castillo Morales</strong>: ESTUDIO DE UN LENGUAJE GRADUAL CON SUBTIPOS NOMINALES (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Kathleen Alexandra Köhler Ávila</strong>: Extensión de aplicación ERdoc (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Martina Javiera Mora Lepin</strong>: Anonimización utilizando Abstract Interpretation (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Martín Ignacio Ramírez Aravena</strong>: Gradual Typing para Python: plugin para IDE (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Rodrigo Alexis Hidalgo Flores</strong>: Optimización y modernización de la infraestructura tecnológica de EmbedX con Kubernetes (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Sebastián Ricardo Bórquez Luarte</strong>: Desarrollo de una aplicación generadora de diagramas UML a partir de código fuente Scala (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Tomás Joaquín Rivas Acuña</strong>: Detección de vulnerabilidades de privacidad en la publicación de datos por parte de instituciones públicas (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Benjamin Jesus Pozo Vidal</strong>: DESARROLLO E INTEGRACION DE SISTEMAS PARA LA MEJORA DE LA ́ATENCION AL CLIENTE MEDIANTE MICROSERVICIOS DE CHATBOT, ́TELEFON ́IA VOIP Y SISTEMA DE TICKETS (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Jorge Andrés Cruces Ortiz</strong>: Typechecker enfocado a dimensionalidad de tensores: Soporte para NLP (2025)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Raúl Alexander Silva Astudillo</strong>: EXTENSIÓN DE EDUCÁNCER PARA SU APLICACIÓN EN DISTINTOS TIPOS DE CÁNCER (2024)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Tomás Ignacio Cortez Encina</strong>: Diseño e implementación de sistema de autenticación de usuarios conectando bases de datos preexistentes (2023)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Cristián Andrés Salazar De La Fuente</strong>: Sistema de apoyo a la docencia y gestión de alumnos en cursos con metodologías grupales (2024)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Bruno Germán Rodríguez Sepúlveda</strong>: CLUSTERING DIFERENCIALMENTE PRIVADO MEDIANTE LA GENERACION DE SINOPSIS PRIVADAS DE DATOS (2024)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Vicente Reyes Valdivieso</strong>: Estudio e implementación de un lenguaje de autorización para bases de datos relacionales (2023)</div>
+    </li>
+  </ul>
+</details>
+
+<!-- ── TEACHING ────────────────────────── -->
+<div class="section-label">Teaching</div>
+<div class="course-grid">
+
+  <div class="course-card">
+    <div class="code">CC5215</div>
+    <div class="course-name">Privacidad de datos</div>
+    <div class="course-years">2026, 2025, 2024, 2023</div>
+  </div>
+
+  <div class="course-card">
+    <div class="code">CC3002</div>
+    <div class="course-name">Metodologías de Diseño y Programación</div>
+    <div class="course-years">2026, 2025, 2024, 2023, 2022</div>
+  </div>
+
+  <div class="course-card">
+    <div class="code">CC5003</div>
+    <div class="course-name">Aplicaciones Web Reactivas</div>
+    <div class="course-years">2025</div>
+  </div>
+
+  <div class="course-card">
+    <div class="code">CC3201</div>
+    <div class="course-name">Bases de Datos</div>
+    <div class="course-years">2024, 2023, 2022</div>
+  </div>
+</div>
+
+
+<div style="margin-top:16px;font-size:0.88rem;color:var(--fg-muted)">
+  Courses created: CC5003 Aplicaciones Web Reactivas (2025), CC5215 Privacidad de datos (2023)
+</div>
+
+<!-- ── ACADEMIC SERVICE ────────────────── -->
+<div class="section-label">Academic Service</div>
+
+<div class="service-tags">
+  <span class="service-tag">POPL 2027 Program comittee</span>
+  <span class="service-tag">ICFP 2025</span>
+  <span class="service-tag">PLDI 2025</span>
+  <span class="service-tag">HOPE 2023 (Higher-Order Programming with Effects)</span>
+  <span class="service-tag">Revision de paper Journal of Computer Languages (A Type Safe Generic Programming System)</span>
+  <span class="service-tag">OOSPLA (2023) Committee Member in External Review / Artifact Evaluation Committee</span>
+  <span class="service-tag">ICFP 2022</span>
+  <span class="service-tag">Journal of Functional Programming (Type-Directed Operational Semantics for Gradual Typing)</span>
+</div>
+
+<!-- ── ADMINISTRATION ──────────────────── -->
+
+<div class="section-label">Service &amp; Administration</div>
+<ul class="card-list">
+
+  <li>
+    <div class="card-title">Coordinador, Desarrollo de Software del DCC</div>
+    <div class="card-meta">2025--present</div>
+  </li>
+
+  <li>
+    <div class="card-title">Miembro, Comité DCC: Ciberseguridad, Privacidad, y Digitalización</div>
+    <div class="card-meta">2025--present</div>
+  </li>
+
+  <li>
+    <div class="card-title">Miembro, CTD plan común</div>
+    <div class="card-meta">2024--present</div>
+  </li>
+
+  <li>
+    <div class="card-title">Miembro, Consejo de departamento</div>
+    <div class="card-meta">2024--present</div>
+  </li>
+
+  <li>
+    <div class="card-title">Miembro, Consejo estratégico del departamento</div>
+    <div class="card-meta">2023--present</div>
+  </li>
+</ul>
+
+<!-- ── TALKS & OUTREACH ────────────────── -->
+
+<div class="section-label">Selected Talks</div>
+<ul class="card-list">
+
+  <li>
+    <div class="card-title">Presentación sobre la nueva ley de protección de datos en VIII Workshop IMFD.</div>
+    <div class="card-meta">2026</div>
+  </li>
+
+  <li>
+    <div class="card-title">Flexible and Expressive Typed Path Patterns for GQL</div>
+    <div class="card-meta">OOPSLA 2025 &middot; 2025</div>
+  </li>
+
+  <li>
+    <div class="card-title">Robust Dynamic Embedding for Gradual Typing</div>
+    <div class="card-meta">ICFP 2025 &middot; 2025</div>
+  </li>
+
+  <li>
+    <div class="card-title">Anonimization by Abstract Interpretation</div>
+    <div class="card-meta">Workshop FCS 2025 &middot; 2025</div>
+  </li>
+
+  <li>
+    <div class="card-title">Seminario Datos IA y Ética: Como fortalecer las bases de nuestra sociedad digital.</div>
+    <div class="card-meta">2023</div>
+  </li>
+
+  <li>
+    <div class="card-title">JCC2023, Escuela de Fundamento de Datos: Importación programática de datos. Privacidad de datos.</div>
+    <div class="card-meta">2023</div>
+  </li>
+
+  <li>
+    <div class="card-title">JCC2022, Escuela de Fundamento de Datos: Importación programática de datos.</div>
+    <div class="card-meta">2022</div>
+  </li>
+</ul>
+
+
+<div class="section-label">In the Press</div>
+<ul class="card-list">
+
+  <li>
+    <div class="card-title">Brecha crítica: Revelan vulnerabilidades en la anonimización de datos públicos ad portas de la nueva Ley de Protección de datos</div>
+    <div class="card-meta">Noticias IMFD &middot; 2025</div>
+  </li>
+
+  <li>
+    <div class="card-title">Deuda cognitiva: los costos invisibles de dejar que la IA haga las tareas.</div>
+    <div class="card-meta">El Mercurio innovación &middot; 2025</div>
+  </li>
+
+  <li>
+    <div class="card-title">Reducción de velocidad urbana disminuyó en más de cuatro días la gravedad e accidentes laborales de tránsito</div>
+    <div class="card-meta">El Mercurio innovación &middot; 2025</div>
+  </li>
+
+  <li>
+    <div class="card-title">FCFM lidera investigación científica con siete nuevos proyectos Fondecyt Iniciación 2025</div>
+    <div class="card-meta">Noticias FCFM &middot; 2025</div>
+  </li>
+</ul>
+
+</div><!-- .page -->
+
+<footer>
+  <div class="page">
+    &copy; 2026 Matías Toro Ipinza &middot; Computer Science Department, University of Chile
+    <br>
+    <span style="font-size:0.75rem">Generated from <a href="https://github.com/matiastoro/academic-track">Academic Track</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
