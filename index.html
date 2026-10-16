@@ -148,41 +148,33 @@ header .photo {
   border-bottom: 1px solid var(--border);
 }
 .pub {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   padding-left: 16px;
   border-left: 2px solid transparent;
   transition: border-color 0.15s;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 .pub:hover { border-left-color: var(--accent); }
-.pub .pub-venue {
+.pub .pub-links {
+  float: right;
+  margin-left: 12px;
+  font-family: var(--font-mono);
   font-size: 0.78rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  margin-bottom: 2px;
+  color: var(--fg-muted);
 }
-.pub h4 {
+.pub .pub-links a { color: var(--fg-muted); }
+.pub .pub-links a:hover { color: var(--accent); }
+.pub .pub-title {
   font-family: var(--font-serif);
   font-size: 1.05rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.35;
-  margin-bottom: 3px;
 }
-.pub .pub-authors {
-  font-size: 0.85rem;
-  color: var(--fg-muted);
-}
-.pub .pub-links {
-  margin-top: 5px;
-  font-size: 0.8rem;
-}
-.pub .pub-links a {
-  margin-right: 12px;
-  color: var(--fg-muted);
-  font-weight: 500;
-}
-.pub .pub-links a:hover { color: var(--accent); }
+.pub .pub-authors { color: var(--fg); }
+.pub .pub-info { color: var(--fg-muted); font-style: italic; }
+.pub .pub-note { color: var(--accent); font-weight: 500; }
+.pub .pub-webnote { color: var(--accent); }
 
 /* ── Cards (projects, admin, etc.) ─── */
 .card-list { list-style: none; }
@@ -373,232 +365,276 @@ details summary::-webkit-details-marker { display: none; }
 <div class="section-label">Publications</div>
 
 <div class="pub-year-group">
-  <div class="pub-year-label">2026</div>
+  <div class="pub-year-label">To Appear</div>
+
 
   <div class="pub">
-    <div class="pub-venue">TOPLAS</div>
-    <h4>A Formal Framework for Typing and Cast Semantics in SQL Engines</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40inproceedings%7BavendanoAl%3Aiswc2026%2C%0A%20%20author%20%3D%20%7BFelipe%20Avenda%C3%B1o%20and%20Jean%20Paul%20Duchens%20and%20Sebasti%C3%A1n%20Ferrada%20and%20Mat%C3%ADas%20Toro%7D%2C%0A%20%20title%20%3D%20%7B%7BfroGQL%3A%20Worst-Case%20Optimal%20Joins%20and%20Type-Driven%20Optimization%20for%20Lightweight%20GQL%7D%7D%2C%0A%20%20booktitle%20%3D%20%7BProceedings%20of%20the%2025th%20International%20Semantic%20Web%20Conference%20(ISWC%202026)%7D%2C%0A%20%20volume%20%3D%20%7B2%7D%2C%0A%20%20number%20%3D%20%7B1%7D%2C%0A%20%20pages%20%3D%20%7B1--26%7D%2C%0A%20%20year%20%3D%20%7B2026%7D%2C%0A%20%20publisher%20%3D%20%7BSpringer-Verlag%7D%0A%7D%0A" download="avendanoAl-iswc2026.bib">bib</a>]</div>
+    <div class="pub-title">froGQL: Worst-Case Optimal Joins and Type-Driven Optimization for Lightweight GQL</div>
+    <div class="pub-authors">Felipe Avendaño, Jean Paul Duchens, Sebastián Ferrada, <strong>Matías Toro</strong></div>
+    <div class="pub-info">Proceedings of the 25th International Semantic Web Conference (ISWC 2026), volume 2, number 1, pp.1-26, 2026, Springer-Verlag</div>
+    <div class="pub-note">To appear</div>
+    
+  </div>
+</div>
+
+<div class="pub-year-group">
+  <div class="pub-year-label">2026</div>
+
+
+  <div class="pub">
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7ByeAl%3Aatpls2026%2C%0A%20%20author%20%3D%20%7BWenjia%20Ye%20and%20Mat%C3%ADas%20Toro%20and%20Claudio%20Gutierrez%20and%20Bruno%20C.%20D.%20S.%20Oliveira%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BA%20Formal%20Framework%20for%20Typing%20and%20Cast%20Semantics%20in%20SQL%20Engines%7D%7D%2C%0A%20%20journal%20%3D%20%7BACM%20Transactions%20on%20Programming%20Languages%20and%20Systems%7D%2C%0A%20%20month%20%3D%20%7BJuly%7D%2C%0A%20%20year%20%3D%20%7B2026%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%2C%0A%20%20doi%20%3D%20%7B10.1145%2F3834861%7D%0A%7D%0A" download="yeAl-atpls2026.bib">bib</a>, <a href="https://doi.org/10.1145/3834861">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2026/yeAl-toplas2026.pdf">pdf</a>]</div>
+    <div class="pub-title">A Formal Framework for Typing and Cast Semantics in SQL Engines</div>
     <div class="pub-authors">Wenjia Ye, <strong>Matías Toro</strong>, Claudio Gutierrez, Bruno C. D. S. Oliveira, Éric Tanter</div>
-    <div class="pub-links">
-      
-      <a href="10.1145/3834861">DOI</a>
-    </div>
+    <div class="pub-info">ACM Transactions on Programming Languages and Systems, July 2026, ACM Press</div>
+    
+    
   </div>
 </div>
 
 <div class="pub-year-group">
   <div class="pub-year-label">2025</div>
 
-  <div class="pub">
-    <div class="pub-venue">ESOP</div>
-    <h4>Elucidating Type Conversions in SQL Engines</h4>
-    <div class="pub-authors">Wenjia Ye, <strong>Matías Toro</strong>, Claudio Gutierrez, Bruno C. d. S. Oliveira, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="http://pleiad.dcc.uchile.cl/papers/2025/yeAl-esop2025.pdf">PDF</a>
-      <a href="https://doi.org/10.1007/978-3-031-91118-7_16">DOI</a>
-    </div>
-  </div>
 
   <div class="pub">
-    <div class="pub-venue">CSF</div>
-    <h4>Gradual Sensitivity Typing</h4>
-    <div class="pub-authors">Damián Árquez, <strong>Matías Toro</strong>, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="http://pleiad.dcc.uchile.cl/papers/2025/arquezAl-csf2025.pdf">PDF</a>
-      <a href="https://doi.ieeecomputersociety.org/10.1109/CSF64896.2025.00021">DOI</a>
-    </div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-venue">Travel Behaviour and Society</div>
-    <h4>Reducing urban speed limits decreases work-related traffic injury severity: Evidence from Santiago, Chile</h4>
-    <div class="pub-authors">Eduardo Graells-Garrido, <strong>Matías Toro</strong>, Gabriel Mansilla, Matías Nicolai, Santiago Mansilla, Jocelyn Dunstan</div>
-    <div class="pub-links">
-      <a href="http://pleiad.dcc.uchile.cl/papers/2025/graellsAl-tbs2025.pdf">PDF</a>
-      <a href="https://doi.org/10.1016/j.tbs.2025.101034">DOI</a>
-    </div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-venue">SoftwareX</div>
-    <h4>Visualizing the semantics of gradual languages with Gredex</h4>
-    <div class="pub-authors"><strong>Matías Toro</strong>, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="https://doi.org/10.1016/j.softx.2025.102425">PDF</a>
-      <a href="https://doi.org/10.1016/j.softx.2025.102425">DOI</a>
-    </div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-venue">ICFP 2025</div>
-    <h4>Robust Dynamic Embedding for Gradual Typing</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7BjacobsAl%3Aicfp2025%2C%0A%20%20author%20%3D%20%7BKoen%20Jacobs%20and%20Mat%C3%ADas%20Toro%20and%20Nicolas%20Tabareau%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BRobust%20Dynamic%20Embedding%20for%20Gradual%20Typing%7D%7D%2C%0A%20%20journal%20%3D%20%7BProceedings%20of%20the%20ACM%20on%20Programming%20Languages%7D%2C%0A%20%20volume%20%3D%20%7B9%7D%2C%0A%20%20number%20%3D%20%7BICFP%7D%2C%0A%20%20pages%20%3D%20%7B238%3A1--238%3A27%7D%2C%0A%20%20month%20%3D%20%7BAugust%7D%2C%0A%20%20year%20%3D%20%7B2025%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%2C%0A%20%20doi%20%3D%20%7B10.1145%2F3747507%7D%0A%7D%0A" download="jacobsAl-icfp2025.bib">bib</a>, <a href="https://doi.org/10.1145/3747507">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2025/jacobsAl-icfp2025.pdf">pdf</a>]</div>
+    <div class="pub-title">Robust Dynamic Embedding for Gradual Typing</div>
     <div class="pub-authors">Koen Jacobs, <strong>Matías Toro</strong>, Nicolas Tabareau, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="http://pleiad.dcc.uchile.cl/papers/2025/jacobsAl-icfp2025.pdf">PDF</a>
-      <a href="https://doi.org/10.1145/3747507">DOI</a>
-    </div>
+    <div class="pub-info">Proceedings of the ACM on Programming Languages, volume 9, number ICFP, pp.238:1-238:27, August 2025, ACM Press</div>
+    
+    
   </div>
 
+
   <div class="pub">
-    <div class="pub-venue">OOPSLA 2025</div>
-    <h4>Flexible and Expressive Typed Path Patterns for GQL</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7BgraellsgarridoAl%3Atbs2025%2C%0A%20%20author%20%3D%20%7BEduardo%20Graells-Garrido%20and%20Mat%C3%ADas%20Toro%20and%20Gabriel%20Mansilla%20and%20Mat%C3%ADas%20Nicolai%20and%20Santiago%20Mansilla%20and%20Jocelyn%20Dunstan%7D%2C%0A%20%20title%20%3D%20%7B%7BReducing%20urban%20speed%20limits%20decreases%20work-related%20traffic%20injury%20severity%3A%20Evidence%20from%20Santiago%2C%20Chile%7D%7D%2C%0A%20%20journal%20%3D%20%7BTravel%20Behaviour%20and%20Society%7D%2C%0A%20%20volume%20%3D%20%7B40%7D%2C%0A%20%20pages%20%3D%20%7B101034%7D%2C%0A%20%20year%20%3D%20%7B2025%7D%2C%0A%20%20publisher%20%3D%20%7BElsevier%7D%2C%0A%20%20doi%20%3D%20%7B10.1016%2Fj.tbs.2025.101034%7D%0A%7D%0A" download="graellsgarridoAl-tbs2025.bib">bib</a>, <a href="https://doi.org/10.1016/j.tbs.2025.101034">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2025/graellsAl-tbs2025.pdf">pdf</a>]</div>
+    <div class="pub-title">Reducing urban speed limits decreases work-related traffic injury severity: Evidence from Santiago, Chile</div>
+    <div class="pub-authors">Eduardo Graells-Garrido, <strong>Matías Toro</strong>, Gabriel Mansilla, Matías Nicolai, Santiago Mansilla, Jocelyn Dunstan</div>
+    <div class="pub-info">Travel Behaviour and Society, volume 40, article 101034, 2025, Elsevier</div>
+    
+    
+  </div>
+
+
+  <div class="pub">
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40inproceedings%7ByeAl%3Aesop2025%2C%0A%20%20author%20%3D%20%7BWenjia%20Ye%20and%20Mat%C3%ADas%20Toro%20and%20Claudio%20Gutierrez%20and%20Bruno%20C.%20d.%20S.%20Oliveira%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BElucidating%20Type%20Conversions%20in%20SQL%20Engines%7D%7D%2C%0A%20%20booktitle%20%3D%20%7BProceedings%20of%20the%2034th%20European%20Symposium%20on%20Programming%20Languages%20and%20Systems%20(ESOP%202025)%7D%2C%0A%20%20volume%20%3D%20%7B15694%7D%2C%0A%20%20pages%20%3D%20%7B408--435%7D%2C%0A%20%20month%20%3D%20%7BApril%7D%2C%0A%20%20year%20%3D%20%7B2025%7D%2C%0A%20%20series%20%3D%20%7BLecture%20Notes%20in%20Computer%20Science%7D%2C%0A%20%20publisher%20%3D%20%7BSpringer-Verlag%7D%2C%0A%20%20doi%20%3D%20%7B10.1007%2F978-3-031-91118-7_16%7D%0A%7D%0A" download="yeAl-esop2025.bib">bib</a>, <a href="https://doi.org/10.1007/978-3-031-91118-7_16">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2025/yeAl-esop2025.pdf">pdf</a>]</div>
+    <div class="pub-title">Elucidating Type Conversions in SQL Engines</div>
+    <div class="pub-authors">Wenjia Ye, <strong>Matías Toro</strong>, Claudio Gutierrez, Bruno C. d. S. Oliveira, Éric Tanter</div>
+    <div class="pub-info">Proceedings of the 34th European Symposium on Programming Languages and Systems (ESOP 2025), volume 15694, pp.408-435, April 2025, Springer-Verlag</div>
+    
+    
+  </div>
+
+
+  <div class="pub">
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40inproceedings%7BmeloAl%3Afacla2025%2C%0A%20%20author%20%3D%20%7BFelix%20Melo%20and%20Luis%20Miranda%20and%20Mat%C3%ADas%20Toro%20and%20Federico%20Olmedo%20and%20Jocelyn%20Dunstan%7D%2C%0A%20%20title%20%3D%20%7B%7BNERaseText%3A%20Sensitive-Aware%20Text%20Sanitization%20under%20Differential%20Privacy%7D%7D%2C%0A%20%20booktitle%20%3D%20%7BFindings%20of%20the%20Association%20for%20Computational%20Linguistics%3A%20ACL-IJCNLP%202021%7D%2C%0A%20%20pages%20%3D%20%7B3853--3866%7D%2C%0A%20%20year%20%3D%20%7B2025%7D%2C%0A%20%20publisher%20%3D%20%7BAssociation%20for%20Computational%20Linguistics%7D%0A%7D%0A" download="meloAl-facla2025.bib">bib</a>]</div>
+    <div class="pub-title">NERaseText: Sensitive-Aware Text Sanitization under Differential Privacy</div>
+    <div class="pub-authors">Felix Melo, Luis Miranda, <strong>Matías Toro</strong>, Federico Olmedo, Jocelyn Dunstan</div>
+    <div class="pub-info">Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pp.3853-3866, 2025, Association for Computational Linguistics</div>
+    
+    
+  </div>
+
+
+  <div class="pub">
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7BtoroTanter%3As2025%2C%0A%20%20author%20%3D%20%7BMat%C3%ADas%20Toro%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BVisualizing%20the%20semantics%20of%20gradual%20languages%20with%20Gredex%7D%7D%2C%0A%20%20journal%20%3D%20%7BSoftwareX%7D%2C%0A%20%20volume%20%3D%20%7B32%7D%2C%0A%20%20pages%20%3D%20%7B102425%7D%2C%0A%20%20month%20%3D%20%7BDecember%7D%2C%0A%20%20year%20%3D%20%7B2025%7D%2C%0A%20%20publisher%20%3D%20%7BElsevier%7D%2C%0A%20%20doi%20%3D%20%7B10.1016%2Fj.softx.2025.102425%7D%0A%7D%0A" download="toroTanter-s2025.bib">bib</a>, <a href="https://doi.org/10.1016/j.softx.2025.102425">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2025/toroTanter-softwarex2025.pdf">pdf</a>]</div>
+    <div class="pub-title">Visualizing the semantics of gradual languages with Gredex</div>
+    <div class="pub-authors"><strong>Matías Toro</strong>, Éric Tanter</div>
+    <div class="pub-info">SoftwareX, volume 32, article 102425, December 2025, Elsevier</div>
+    
+    
+  </div>
+
+
+  <div class="pub">
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7ByeAl%3Aoopsla2025%2C%0A%20%20author%20%3D%20%7BWenjia%20Ye%20and%20Mat%C3%ADas%20Toro%20and%20Tom%C3%A1s%20D%C3%ADaz%20and%20Bruno%20C.%20d.%20S.%20Oliveira%20and%20Manuel%20Rigger%20and%20Claudio%20Gutierrez%20and%20Domagoj%20Vrgo%C4%8D%7D%2C%0A%20%20title%20%3D%20%7B%7BFlexible%20and%20Expressive%20Typed%20Path%20Patterns%20for%20GQL%7D%7D%2C%0A%20%20journal%20%3D%20%7BProceedings%20of%20the%20ACM%20on%20Programming%20Languages%7D%2C%0A%20%20volume%20%3D%20%7B9%7D%2C%0A%20%20number%20%3D%20%7BOOPSLA1%7D%2C%0A%20%20pages%20%3D%20%7B302--328%7D%2C%0A%20%20year%20%3D%20%7B2025%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%2C%0A%20%20doi%20%3D%20%7B10.1145%2F3763061%7D%0A%7D%0A" download="yeAl-oopsla2025.bib">bib</a>, <a href="https://doi.org/10.1145/3763061">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2025/yeAl-oopsla2025.pdf">pdf</a>]</div>
+    <div class="pub-title">Flexible and Expressive Typed Path Patterns for GQL</div>
     <div class="pub-authors">Wenjia Ye, <strong>Matías Toro</strong>, Tomás Díaz, Bruno C. d. S. Oliveira, Manuel Rigger, Claudio Gutierrez, Domagoj Vrgoč</div>
-    <div class="pub-links">
-      <a href="http://pleiad.dcc.uchile.cl/papers/2025/yeAl-oopsla2025.pdf">PDF</a>
-      <a href="https://doi.org/10.1145/3763061">DOI</a>
-    </div>
+    <div class="pub-info">Proceedings of the ACM on Programming Languages, volume 9, number OOPSLA1, pp.302-328, 2025, ACM Press</div>
+    
+    
   </div>
 
+
   <div class="pub">
-    <div class="pub-venue">2025 44th International Conference of the Chilean Compute...</div>
-    <h4>A Study of Data Anonymization in Chile’s Public Sector</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40inproceedings%7BarquezAl%3Acsf2025%2C%0A%20%20author%20%3D%20%7BDami%C3%A1n%20%C3%81rquez%20and%20Mat%C3%ADas%20Toro%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BGradual%20Sensitivity%20Typing%7D%7D%2C%0A%20%20booktitle%20%3D%20%7BProceedings%20of%20the%2038th%20IEEE%20Computer%20Security%20Foundations%20Symposium%20(CSF%202025)%7D%2C%0A%20%20pages%20%3D%20%7B314--329%7D%2C%0A%20%20month%20%3D%20%7BJune%7D%2C%0A%20%20year%20%3D%20%7B2025%7D%2C%0A%20%20publisher%20%3D%20%7BIEEE%20Computer%20Society%20Press%7D%0A%7D%0A" download="arquezAl-csf2025.bib">bib</a>, <a href="https://doi.ieeecomputersociety.org/10.1109/CSF64896.2025.00021">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2025/arquezAl-csf2025.pdf">pdf</a>]</div>
+    <div class="pub-title">Gradual Sensitivity Typing</div>
+    <div class="pub-authors">Damián Árquez, <strong>Matías Toro</strong>, Éric Tanter</div>
+    <div class="pub-info">Proceedings of the 38th IEEE Computer Security Foundations Symposium (CSF 2025), pp.314-329, June 2025, IEEE Computer Society Press</div>
+    
+    
+  </div>
+
+
+  <div class="pub">
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40inproceedings%7BrivasAl%3Asccc2025%2C%0A%20%20author%20%3D%20%7BTom%C3%A1s%20Rivas%20and%20Federico%20Olmedo%20and%20Mat%C3%ADas%20Toro%7D%2C%0A%20%20title%20%3D%20%7B%7BA%20Study%20of%20Data%20Anonymization%20in%20Chile%E2%80%99s%20Public%20Sector%7D%7D%2C%0A%20%20booktitle%20%3D%20%7BProceedings%20of%20the%2044th%20International%20Conference%20of%20the%20Chilean%20Computer%20Science%20Society%20(SCCC%202025)%7D%2C%0A%20%20pages%20%3D%20%7B1--8%7D%2C%0A%20%20month%20%3D%20%7BOctober%7D%2C%0A%20%20year%20%3D%20%7B2025%7D%2C%0A%20%20publisher%20%3D%20%7BIEEE%20Computer%20Society%20Press%7D%2C%0A%20%20doi%20%3D%20%7B10.1109%2FSCCC67219.2025.11420743%7D%0A%7D%0A" download="rivasAl-sccc2025.bib">bib</a>, <a href="https://doi.org/10.1109/SCCC67219.2025.11420743">doi</a>]</div>
+    <div class="pub-title">A Study of Data Anonymization in Chile’s Public Sector</div>
     <div class="pub-authors">Tomás Rivas, Federico Olmedo, <strong>Matías Toro</strong></div>
-    <div class="pub-links">
-      
-      <a href="10.1109/SCCC67219.2025.11420743">DOI</a>
-    </div>
+    <div class="pub-info">Proceedings of the 44th International Conference of the Chilean Computer Science Society (SCCC 2025), pp.1-8, October 2025, IEEE Computer Society Press</div>
+    
+    
+  </div>
+
+
+  <div class="pub">
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40inproceedings%7BricciAl%3Aifl2025%2C%0A%20%20author%20%3D%20%7BGaspar%20Ricci%20and%20Sebasti%C3%A1n%20Erdweg%20and%20%C3%89ric%20Tanter%20and%20Mat%C3%ADas%20Toro%7D%2C%0A%20%20title%20%3D%20%7B%7BFoundations%20of%20Gradual%20Abstract%20Interpretation%7D%7D%2C%0A%20%20booktitle%20%3D%20%7BProceedings%20of%20the%2037th%20Symposium%20on%20Implementation%20and%20Application%20of%20Functional%20Languages%20(IFL%202025)%7D%2C%0A%20%20year%20%3D%20%7B2025%7D%0A%7D%0A" download="ricciAl-ifl2025.bib">bib</a>]</div>
+    <div class="pub-title">Foundations of Gradual Abstract Interpretation</div>
+    <div class="pub-authors">Gaspar Ricci, Sebastián Erdweg, Éric Tanter, <strong>Matías Toro</strong></div>
+    <div class="pub-info">Proceedings of the 37th Symposium on Implementation and Application of Functional Languages (IFL 2025), 2025</div>
+    
+    
   </div>
 </div>
 
 <div class="pub-year-group">
   <div class="pub-year-label">2024</div>
 
-  <div class="pub">
-    <div class="pub-venue">OOPSLA 2024</div>
-    <h4>Merging Gradual Typing</h4>
-    <div class="pub-authors">Wenjia Ye, Bruno C. d. S. Oliveira, <strong>Matías Toro</strong></div>
-    <div class="pub-links">
-      <a href="http://pleiad.dcc.uchile.cl/papers/2024/yeAl-oopsla2024.pdf">PDF</a>
-      <a href="https://doi.org/10.1145/3689734">DOI</a>
-    </div>
-  </div>
 
   <div class="pub">
-    <div class="pub-venue">CACM</div>
-    <h4>Gradual Differentially Private Programming</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40inproceedings%7BmirandaAl%3Apaicma2024%2C%0A%20%20author%20%3D%20%7BLuis%20Miranda%20and%20Jocelyn%20Dunstan%20and%20Mat%C3%ADas%20Toro%20and%20Federico%20Olmedo%20and%20Felix%20Melo%7D%2C%0A%20%20title%20%3D%20%7B%7BEvaluating%20Privacy%20Risks%20in%20Synthetic%20Clinical%20Text%20Generation%20in%20Spanish%7D%7D%2C%0A%20%20booktitle%20%3D%20%7BProceedings%20of%20the%207th%20ACM%20International%20Conference%20on%20Multimedia%20in%20Asia%7D%2C%0A%20%20pages%20%3D%20%7B1--7%7D%2C%0A%20%20year%20%3D%20%7B2024%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%0A%7D%0A" download="mirandaAl-paicma2024.bib">bib</a>]</div>
+    <div class="pub-title">Evaluating Privacy Risks in Synthetic Clinical Text Generation in Spanish</div>
+    <div class="pub-authors">Luis Miranda, Jocelyn Dunstan, <strong>Matías Toro</strong>, Federico Olmedo, Felix Melo</div>
+    <div class="pub-info">Proceedings of the 7th ACM International Conference on Multimedia in Asia, pp.1-7, 2024, ACM Press</div>
+    
+    
+  </div>
+
+
+  <div class="pub">
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7BtoroAl%3Aca2024%2C%0A%20%20author%20%3D%20%7BMat%C3%ADas%20Toro%20and%20Federico%20Olmedo%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BGradual%20Differentially%20Private%20Programming%7D%7D%2C%0A%20%20journal%20%3D%20%7BCommunications%20of%20the%20ACM%7D%2C%0A%20%20volume%20%3D%20%7B67%7D%2C%0A%20%20number%20%3D%20%7B8%7D%2C%0A%20%20pages%20%3D%20%7B49--53%7D%2C%0A%20%20month%20%3D%20%7BAugust%7D%2C%0A%20%20year%20%3D%20%7B2024%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%2C%0A%20%20doi%20%3D%20%7B10.1145%2F3653328%7D%0A%7D%0A" download="toroAl-ca2024.bib">bib</a>, <a href="https://doi.org/10.1145/3653328">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2024/toroAl-cacm2024.pdf">pdf</a>]</div>
+    <div class="pub-title">Gradual Differentially Private Programming</div>
     <div class="pub-authors"><strong>Matías Toro</strong>, Federico Olmedo, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="http://pleiad.dcc.uchile.cl/papers/2024/toroAl-cacm2024.pdf">PDF</a>
-      <a href="https://doi.org/10.1145/3653328">DOI</a>
-    </div>
+    <div class="pub-info">Communications of the ACM, volume 67, number 8, pp.49-53, August 2024, ACM Press</div>
+    
+    
+  </div>
+
+
+  <div class="pub">
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7ByeAl%3Aoopsla2024%2C%0A%20%20author%20%3D%20%7BWenjia%20Ye%20and%20Bruno%20C.%20d.%20S.%20Oliveira%20and%20Mat%C3%ADas%20Toro%7D%2C%0A%20%20title%20%3D%20%7B%7BMerging%20Gradual%20Typing%7D%7D%2C%0A%20%20journal%20%3D%20%7BProceedings%20of%20the%20ACM%20on%20Programming%20Languages%7D%2C%0A%20%20volume%20%3D%20%7B8%7D%2C%0A%20%20number%20%3D%20%7BOOPSLA1%7D%2C%0A%20%20pages%20%3D%20%7B294%3A648--294%3A676%7D%2C%0A%20%20month%20%3D%20%7BOctober%7D%2C%0A%20%20year%20%3D%20%7B2024%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%2C%0A%20%20doi%20%3D%20%7B10.1145%2F3689734%7D%0A%7D%0A" download="yeAl-oopsla2024.bib">bib</a>, <a href="https://doi.org/10.1145/3689734">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2024/yeAl-oopsla2024.pdf">pdf</a>]</div>
+    <div class="pub-title">Merging Gradual Typing</div>
+    <div class="pub-authors">Wenjia Ye, Bruno C. d. S. Oliveira, <strong>Matías Toro</strong></div>
+    <div class="pub-info">Proceedings of the ACM on Programming Languages, volume 8, number OOPSLA1, pp.294:648-294:676, October 2024, ACM Press</div>
+    
+    
   </div>
 </div>
 
 <div class="pub-year-group">
   <div class="pub-year-label">2023</div>
 
-  <div class="pub">
-    <div class="pub-venue">TOPLAS</div>
-    <h4>Contextual Linear Types for Differential Privacy</h4>
-    <div class="pub-authors"><strong>Matías Toro</strong>, David Darais, Chike Abuah, Joe Near, Damián Árquez, Federico Olmedo, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="http://pleiad.dcc.uchile.cl/papers/2023/toroAl-toplas2023.pdf">PDF</a>
-      <a href="https://dl.acm.org/doi/10.1145/3589207">DOI</a>
-    </div>
-  </div>
 
   <div class="pub">
-    <div class="pub-venue">OOPSLA 2023</div>
-    <h4>A Gradual Probabilistic Lambda Calculus</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7ByeAl%3Aoopsla2023%2C%0A%20%20author%20%3D%20%7BWenjia%20Ye%20and%20Mat%C3%ADas%20Toro%20and%20Federico%20Olmedo%7D%2C%0A%20%20title%20%3D%20%7B%7BA%20Gradual%20Probabilistic%20Lambda%20Calculus%7D%7D%2C%0A%20%20journal%20%3D%20%7BProceedings%20of%20the%20ACM%20on%20Programming%20Languages%7D%2C%0A%20%20volume%20%3D%20%7B7%7D%2C%0A%20%20number%20%3D%20%7BOOPSLA1%7D%2C%0A%20%20pages%20%3D%20%7B256--285%7D%2C%0A%20%20month%20%3D%20%7BOctober%7D%2C%0A%20%20year%20%3D%20%7B2023%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%0A%7D%0A" download="yeAl-oopsla2023.bib">bib</a>, <a href="https://dl.acm.org/doi/10.1145/3586036">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2023/yeAl-oopsla2023.pdf">pdf</a>]</div>
+    <div class="pub-title">A Gradual Probabilistic Lambda Calculus</div>
     <div class="pub-authors">Wenjia Ye, <strong>Matías Toro</strong>, Federico Olmedo</div>
-    <div class="pub-links">
-      <a href="http://pleiad.dcc.uchile.cl/papers/2023/yeAl-oopsla2023.pdf">PDF</a>
-      <a href="https://dl.acm.org/doi/10.1145/3586036">DOI</a>
-    </div>
+    <div class="pub-info">Proceedings of the ACM on Programming Languages, volume 7, number OOPSLA1, pp.256-285, October 2023, ACM Press</div>
+    
+    
+  </div>
+
+
+  <div class="pub">
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7BtoroAl%3Aatpls2023%2C%0A%20%20author%20%3D%20%7BMat%C3%ADas%20Toro%20and%20David%20Darais%20and%20Chike%20Abuah%20and%20Joe%20Near%20and%20Dami%C3%A1n%20%C3%81rquez%20and%20Federico%20Olmedo%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BContextual%20Linear%20Types%20for%20Differential%20Privacy%7D%7D%2C%0A%20%20journal%20%3D%20%7BACM%20Transactions%20on%20Programming%20Languages%20and%20Systems%7D%2C%0A%20%20volume%20%3D%20%7B45%7D%2C%0A%20%20number%20%3D%20%7B2%7D%2C%0A%20%20pages%20%3D%20%7B8%3A1--8%3A69%7D%2C%0A%20%20year%20%3D%20%7B2023%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%0A%7D%0A" download="toroAl-atpls2023.bib">bib</a>, <a href="https://dl.acm.org/doi/10.1145/3589207">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2023/toroAl-toplas2023.pdf">pdf</a>]</div>
+    <div class="pub-title">Contextual Linear Types for Differential Privacy</div>
+    <div class="pub-authors"><strong>Matías Toro</strong>, David Darais, Chike Abuah, Joe Near, Damián Árquez, Federico Olmedo, Éric Tanter</div>
+    <div class="pub-info">ACM Transactions on Programming Languages and Systems, volume 45, number 2, pp.8:1-8:69, 2023, ACM Press</div>
+    
+    
   </div>
 </div>
 
 <div class="pub-year-group">
   <div class="pub-year-label">2022</div>
 
-  <div class="pub">
-    <div class="pub-venue">JACM</div>
-    <h4>Gradual System F</h4>
-    <div class="pub-authors">Elizabeth Labrada, <strong>Matías Toro</strong>, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="http://pleiad.dcc.uchile.cl/papers/2022/labradaAl-jacm2022.pdf">PDF</a>
-      <a href="https://doi.org/10.1145/3555986">DOI</a>
-    </div>
-  </div>
 
   <div class="pub">
-    <div class="pub-venue">OOPSLA 20022.</div>
-    <h4>Plausible Sealing for Gradual Parametricity</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7BlabradaAl%3Aoopsla2022%2C%0A%20%20author%20%3D%20%7BElizabeth%20Labrada%20and%20Mat%C3%ADas%20Toro%20and%20%C3%89ric%20Tanter%20and%20Dominique%20Devriese%7D%2C%0A%20%20title%20%3D%20%7B%7BPlausible%20Sealing%20for%20Gradual%20Parametricity%7D%7D%2C%0A%20%20journal%20%3D%20%7BProceedings%20of%20the%20ACM%20on%20Programming%20Languages%7D%2C%0A%20%20volume%20%3D%20%7B6%7D%2C%0A%20%20number%20%3D%20%7BOOPSLA1%7D%2C%0A%20%20pages%20%3D%20%7B70%3A1--70%3A28%7D%2C%0A%20%20month%20%3D%20%7BApril%7D%2C%0A%20%20year%20%3D%20%7B2022%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%2C%0A%20%20doi%20%3D%20%7B10.1145%2F3527314%7D%0A%7D%0A" download="labradaAl-oopsla2022.bib">bib</a>, <a href="https://doi.org/10.1145/3527314">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2022/labradaAl-oopsla2022.pdf">pdf</a>]</div>
+    <div class="pub-title">Plausible Sealing for Gradual Parametricity</div>
     <div class="pub-authors">Elizabeth Labrada, <strong>Matías Toro</strong>, Éric Tanter, Dominique Devriese</div>
-    <div class="pub-links">
-      <a href="http://pleiad.dcc.uchile.cl/papers/2022/labradaAl-oopsla2022.pdf">PDF</a>
-      <a href="https://doi.org/10.1145/3527314">DOI</a>
-    </div>
+    <div class="pub-info">Proceedings of the ACM on Programming Languages, volume 6, number OOPSLA1, pp.70:1-70:28, April 2022, ACM Press</div>
+    
+    
+  </div>
+
+
+  <div class="pub">
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7BlabradaAl%3Aja2022%2C%0A%20%20author%20%3D%20%7BElizabeth%20Labrada%20and%20Mat%C3%ADas%20Toro%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BGradual%20System%20F%7D%7D%2C%0A%20%20journal%20%3D%20%7BJournal%20of%20the%20ACM%7D%2C%0A%20%20volume%20%3D%20%7B69%7D%2C%0A%20%20number%20%3D%20%7B5%7D%2C%0A%20%20pages%20%3D%20%7B38%3A1--38%3A78%7D%2C%0A%20%20month%20%3D%20%7BOctober%7D%2C%0A%20%20year%20%3D%20%7B2022%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%2C%0A%20%20doi%20%3D%20%7B10.1145%2F3555986%7D%0A%7D%0A" download="labradaAl-ja2022.bib">bib</a>, <a href="https://doi.org/10.1145/3555986">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2022/labradaAl-jacm2022.pdf">pdf</a>]</div>
+    <div class="pub-title">Gradual System F</div>
+    <div class="pub-authors">Elizabeth Labrada, <strong>Matías Toro</strong>, Éric Tanter</div>
+    <div class="pub-info">Journal of the ACM, volume 69, number 5, pp.38:1-38:78, October 2022, ACM Press</div>
+    
+    
   </div>
 </div>
 
 <div class="pub-year-group">
   <div class="pub-year-label">2020</div>
 
+
   <div class="pub">
-    <div class="pub-venue">Science of Computer Programming</div>
-    <h4>Abstracting gradual references</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7BtoroTanter%3Ascp2020%2C%0A%20%20author%20%3D%20%7BMat%C3%ADas%20Toro%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BAbstracting%20gradual%20references%7D%7D%2C%0A%20%20journal%20%3D%20%7BScience%20of%20Computer%20Programming%7D%2C%0A%20%20volume%20%3D%20%7B197%7D%2C%0A%20%20pages%20%3D%20%7B102496%7D%2C%0A%20%20month%20%3D%20%7BOctober%7D%2C%0A%20%20year%20%3D%20%7B2020%7D%2C%0A%20%20publisher%20%3D%20%7BElsevier%7D%2C%0A%20%20doi%20%3D%20%7B10.1016%2Fj.scico.2020.102496%7D%0A%7D%0A" download="toroTanter-scp2020.bib">bib</a>, <a href="https://doi.org/10.1016/j.scico.2020.102496">doi</a>, <a href="https://pleiad.dcc.uchile.cl/papers/2020/toroTanter-scp2020.pdf">pdf</a>]</div>
+    <div class="pub-title">Abstracting gradual references</div>
     <div class="pub-authors"><strong>Matías Toro</strong>, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="https://doi.org/10.1016/j.scico.2020.102496">PDF</a>
-      <a href="https://doi.org/10.1016/j.scico.2020.102496">DOI</a>
-    </div>
+    <div class="pub-info">Science of Computer Programming, volume 197, article 102496, October 2020, Elsevier</div>
+    
+    
   </div>
 </div>
 
 <div class="pub-year-group">
   <div class="pub-year-label">2019</div>
 
+
   <div class="pub">
-    <div class="pub-venue">Proceedings of the ACM on Programming Languages</div>
-    <h4>Gradual parametricity, revisited</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7BtoroAl%3Apopl2019%2C%0A%20%20author%20%3D%20%7BMat%C3%ADas%20Toro%20and%20Elizabeth%20Labrada%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BGradual%20parametricity%2C%20revisited%7D%7D%2C%0A%20%20journal%20%3D%20%7BProceedings%20of%20the%20ACM%20on%20Programming%20Languages%7D%2C%0A%20%20volume%20%3D%20%7B3%7D%2C%0A%20%20number%20%3D%20%7BPOPL%7D%2C%0A%20%20pages%20%3D%20%7B17%3A1--17%3A30%7D%2C%0A%20%20month%20%3D%20%7BJanuary%7D%2C%0A%20%20year%20%3D%20%7B2019%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%2C%0A%20%20doi%20%3D%20%7B10.1145%2F3290330%7D%0A%7D%0A" download="toroAl-popl2019.bib">bib</a>, <a href="https://doi.org/10.1145/3290330">doi</a>, <a href="https://pleiad.dcc.uchile.cl/papers/2019/toroAl-popl2019.pdf">pdf</a>]</div>
+    <div class="pub-title">Gradual parametricity, revisited</div>
     <div class="pub-authors"><strong>Matías Toro</strong>, Elizabeth Labrada, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="https://doi.org/10.1145/3290330">PDF</a>
-      <a href="https://doi.org/10.1145/3290330">DOI</a>
-    </div>
+    <div class="pub-info">Proceedings of the ACM on Programming Languages, volume 3, number POPL, pp.17:1-17:30, January 2019, ACM Press</div>
+    
+    <div class="pub-webnote">Distinguished Paper Award</div>
   </div>
 </div>
 
 <div class="pub-year-group">
   <div class="pub-year-label">2018</div>
 
+
   <div class="pub">
-    <div class="pub-venue">TOPLAS</div>
-    <h4>Type-Driven Gradual Security with References</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40article%7BtoroAl%3Aatpls2018%2C%0A%20%20author%20%3D%20%7BMat%C3%ADas%20Toro%20and%20Ronald%20Garcia%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BType-Driven%20Gradual%20Security%20with%20References%7D%7D%2C%0A%20%20journal%20%3D%20%7BACM%20Transactions%20on%20Programming%20Languages%20and%20Systems%7D%2C%0A%20%20volume%20%3D%20%7B40%7D%2C%0A%20%20number%20%3D%20%7B4%7D%2C%0A%20%20pages%20%3D%20%7B16%3A1--16%3A55%7D%2C%0A%20%20month%20%3D%20%7BNovember%7D%2C%0A%20%20year%20%3D%20%7B2018%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%2C%0A%20%20doi%20%3D%20%7B10.1145%2F3229061%7D%0A%7D%0A" download="toroAl-atpls2018.bib">bib</a>, <a href="https://doi.org/10.1145/3229061">doi</a>, <a href="https://pleiad.dcc.uchile.cl/papers/2018/toroAl-toplas2018.pdf">pdf</a>]</div>
+    <div class="pub-title">Type-Driven Gradual Security with References</div>
     <div class="pub-authors"><strong>Matías Toro</strong>, Ronald Garcia, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="https://doi.org/10.1145/3229061">PDF</a>
-      <a href="https://doi.org/10.1145/3229061">DOI</a>
-    </div>
+    <div class="pub-info">ACM Transactions on Programming Languages and Systems, volume 40, number 4, pp.16:1-16:55, November 2018, ACM Press</div>
+    
+    
   </div>
 </div>
 
 <div class="pub-year-group">
   <div class="pub-year-label">2017</div>
 
+
   <div class="pub">
-    <div class="pub-venue">Lecture Notes in Computer Science</div>
-    <h4>A Gradual Interpretation of Union Types</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40inproceedings%7BtoroTanter%3Asas2017%2C%0A%20%20author%20%3D%20%7BMat%C3%ADas%20Toro%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BA%20Gradual%20Interpretation%20of%20Union%20Types%7D%7D%2C%0A%20%20booktitle%20%3D%20%7BProceedings%20of%20the%2024th%20Static%20Analysis%20Symposium%20(SAS%202017)%7D%2C%0A%20%20volume%20%3D%20%7B10422%7D%2C%0A%20%20pages%20%3D%20%7B382--404%7D%2C%0A%20%20month%20%3D%20%7BAugust%7D%2C%0A%20%20year%20%3D%20%7B2017%7D%2C%0A%20%20publisher%20%3D%20%7BSpringer-Verlag%7D%2C%0A%20%20doi%20%3D%20%7B10.1007%2F978-3-319-66706-5_19%7D%0A%7D%0A" download="toroTanter-sas2017.bib">bib</a>, <a href="https://doi.org/10.1007/978-3-319-66706-5_19">doi</a>, <a href="https://pleiad.dcc.uchile.cl/papers/2017/toroTanter-sas2017.pdf">pdf</a>]</div>
+    <div class="pub-title">A Gradual Interpretation of Union Types</div>
     <div class="pub-authors"><strong>Matías Toro</strong>, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="https://doi.org/10.1007/978-3-319-66706-5_19">PDF</a>
-      <a href="https://doi.org/10.1007/978-3-319-66706-5_19">DOI</a>
-    </div>
+    <div class="pub-info">Proceedings of the 24th Static Analysis Symposium (SAS 2017), volume 10422, pp.382-404, August 2017, Springer-Verlag</div>
+    
+    
   </div>
 </div>
 
 <div class="pub-year-group">
   <div class="pub-year-label">2015</div>
 
+
   <div class="pub">
-    <div class="pub-venue">Proceedings of the 2015 ACM SIGPLAN International Confere...</div>
-    <h4>Customizable gradual polymorphic effects for Scala</h4>
+    <div class="pub-links">[<a href="data:text/plain;charset=utf-8,%40inproceedings%7BtoroTanter%3Aoopsla2015%2C%0A%20%20author%20%3D%20%7BMat%C3%ADas%20Toro%20and%20%C3%89ric%20Tanter%7D%2C%0A%20%20title%20%3D%20%7B%7BCustomizable%20gradual%20polymorphic%20effects%20for%20Scala%7D%7D%2C%0A%20%20booktitle%20%3D%20%7BProceedings%20of%20the%2030th%20ACM%20SIGPLAN%20Conference%20on%20Object-Oriented%20Programming%20Systems%2C%20Languages%20and%20Applications%20(OOPSLA%202015)%7D%2C%0A%20%20pages%20%3D%20%7B935--953%7D%2C%0A%20%20month%20%3D%20%7BOctober%7D%2C%0A%20%20year%20%3D%20%7B2015%7D%2C%0A%20%20publisher%20%3D%20%7BACM%20Press%7D%2C%0A%20%20doi%20%3D%20%7B10.1145%2F2814270.2814315%7D%0A%7D%0A" download="toroTanter-oopsla2015.bib">bib</a>, <a href="https://doi.org/10.1145/2814270.2814315">doi</a>, <a href="http://pleiad.dcc.uchile.cl/papers/2015/toroTanter-oopsla2015.pdf">pdf</a>]</div>
+    <div class="pub-title">Customizable gradual polymorphic effects for Scala</div>
     <div class="pub-authors"><strong>Matías Toro</strong>, Éric Tanter</div>
-    <div class="pub-links">
-      <a href="https://doi.org/10.1145/2814270.2814315">PDF</a>
-      <a href="https://doi.org/10.1145/2814270.2814315">DOI</a>
-    </div>
+    <div class="pub-info">Proceedings of the 30th ACM SIGPLAN Conference on Object-Oriented Programming Systems, Languages and Applications (OOPSLA 2015), pp.935-953, October 2015, ACM Press</div>
+    
+    
   </div>
 </div>
 
@@ -610,6 +646,13 @@ details summary::-webkit-details-marker { display: none; }
     <div class="card-title">Learning Origin-destination Inference through Cross-source Analytics (LOICA)</div>
     <div class="card-meta">
       Fondecyt Regular 2026 &middot; Co-PI
+    </div>
+  </li>
+
+  <li>
+    <div class="card-title">COLIBRÍ (COLaboración Integrada para Barrios Resilientes e Inteligentes): Plataforma de Análisis y Visualización para Municipios</div>
+    <div class="card-meta">
+      Concurso IDeA I+D 2025 &middot; Co-PI
     </div>
   </li>
 
@@ -638,6 +681,13 @@ details summary::-webkit-details-marker { display: none; }
     <div class="card-title">Evaluación de la distancia recorrida por un trabajador durante el trayecto desde o hacia su trabajo como factor de riesgo de exposición en accidentes de tránsito de Mutual de Seguridad C.Ch.C</div>
     <div class="card-meta">
       Proyectos de Investigación e Innovación - Superintendencia de Seguridad Social &middot; Co-PI &middot; <a href="https://www.suseso.cl/619/w3-article-740277.html">link</a>
+    </div>
+  </li>
+
+  <li>
+    <div class="card-title">Gradual Reasoning About Differential Privacy</div>
+    <div class="card-meta">
+      Fondecyt de Postdoctorado 2020 &middot; PI
     </div>
   </li>
 </ul>
@@ -677,16 +727,16 @@ details summary::-webkit-details-marker { display: none; }
     <li>
       <span class="level-badge msc">MSc</span>
       <div>
-        <strong>Matías Alejandro Godoy Concha</strong><br>
-        <span style="font-size:0.85rem;color:var(--fg-muted)">Framework de Evaluación Estandarizado para Métodos de Privacidad Diferencial en Retrieval-Augmented Generation (co-advised with Felipe Bravo)</span>
+        <strong>Hernan Abel Diaz Fuentes</strong><br>
+        <span style="font-size:0.85rem;color:var(--fg-muted)">Compilación e Implementación Eficiente de Gradual Security Typing en el marco del compilador GrEv (as co-advisor, main advisor Éric Tanter)</span>
       </div>
     </li>
 
     <li>
       <span class="level-badge msc">MSc</span>
       <div>
-        <strong>Javier Kauer</strong><br>
-        <span style="font-size:0.85rem;color:var(--fg-muted)">Gradual Typing for Objects (co-advised with Éric Tanter)</span>
+        <strong>Matías Alejandro Godoy Concha</strong><br>
+        <span style="font-size:0.85rem;color:var(--fg-muted)">Framework de Evaluación Estandarizado para Métodos de Privacidad Diferencial en Retrieval-Augmented Generation (as co-advisor, main advisor Felipe Bravo)</span>
       </div>
     </li>
 
@@ -695,6 +745,14 @@ details summary::-webkit-details-marker { display: none; }
       <div>
         <strong>Arturo Felipe Kullmer Schuller</strong><br>
         <span style="font-size:0.85rem;color:var(--fg-muted)">HIERARCHICAL DIFFERENTIAL PRIVACY FOR THE PUBLICATION OF NATIONAL CENSUS DATA (co-advised with Federico Olmedo)</span>
+      </div>
+    </li>
+
+    <li>
+      <span class="level-badge msc">MSc</span>
+      <div>
+        <strong>Javier Kauer</strong><br>
+        <span style="font-size:0.85rem;color:var(--fg-muted)">Gradual Typing for Objects (co-advised with Éric Tanter)</span>
       </div>
     </li>
 
@@ -710,7 +768,7 @@ details summary::-webkit-details-marker { display: none; }
       <span class="level-badge phd">PhD</span>
       <div>
         <strong>Damián Nicolás Arquez Trigo</strong><br>
-        <span style="font-size:0.85rem;color:var(--fg-muted)">Flexible Language Support for Differentially-Private Programming (co-advised with Éric Tanter)</span>
+        <span style="font-size:0.85rem;color:var(--fg-muted)">Flexible Language Support for Differentially-Private Programming (as co-advisor, main advisor Éric Tanter)</span>
       </div>
     </li>
   </ul>
@@ -718,42 +776,57 @@ details summary::-webkit-details-marker { display: none; }
 
 
 <details>
-  <summary>Current Undergraduate Thesis Students (23)</summary>
+  <summary>Current Undergraduate Thesis Students (25)</summary>
   <ul class="student-list" style="padding-top:8px">
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Matías Ignacio Neira Miranda</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Conversión de consultas SQL entre sistemas de gestion de bases de datos</span></div>
+      <div><strong>Matías Ignacio Neira Miranda</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Conversión de consultas SQL entre sistemas de gestion de bases de datos (co-advised with Éric Tanter)</span></div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Benjamín Antonio Estupiñan Badilla</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Plataforma de uso compartido de GPU para entrenamiento e inferencia interactiva</span></div>
+      <div><strong>Tomás Vicente Méndez Corvalán</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">froGQL: Refactorización y aseguramiento de calidad (co-advised with Nicolás Lehmman)</span></div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Tomás Vicente Méndez Corvalán</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">froGQL: Refactorización y aseguramiento de calidad</span></div>
+      <div><strong>Augusto Ignacio Aguayo Barham</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Agente conversacional Buk</span></div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Vicente Javier Álamos Villanueva</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Refactorización y aseguramiento de calidad en Tyger</span></div>
+      <div><strong>Marcelo Chuang Yang</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Sistema de inventario RFID para Ticketplus</span></div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Diego Samuel Tapia Ramírez</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">No tiene aun pero trabaja en Buk</span></div>
+      <div><strong>Tomás Ari Ubilla Zavala</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Extensión de una plataforma para la evaluación in-situ de laboratorios de programación</span></div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Francisco Gutiérrez Albornoz</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Optimización de flujo de desarrollo usando agentic AI en Fintech</span></div>
+      <div><strong>Ignacia Sofía Montserrat Galaz Alvarado</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Mejorando la privacidad en la Encuesta Nacional Urbana de Seguridad Ciudadana (as co-advisor)</span></div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Daniel Ramírez López</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Roadmap de educación</span></div>
+      <div><strong>Julián Ignacio Ferreira Arteaga</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Incorporación de agentes de IA para automatización de procesos en software OpticksAI</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Martín Emilio Maulén Líbano</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Wiki interactiva para el curso Privacidad de Datos (as co-advisor)</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Benjamín Antonio Estupiñan Badilla</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Plataforma de uso compartido de GPU para entrenamiento e inferencia interactiva (co-advised with Mauricio Cerda)</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Vicente Javier Álamos Villanueva</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Refactorización y aseguramiento de calidad en Tyger (co-advised with Éric Tanter)</span></div>
     </li>
 
     <li>
@@ -763,7 +836,17 @@ details summary::-webkit-details-marker { display: none; }
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Jannis Isabel Cruz</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)"> Expansión de Buk asistencia en Brasil</span></div>
+      <div><strong>Andrés Gallardo</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Desarrollo de herramienta de balanceo de charts en Buk</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Alexander Reisenegger Meissner</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Sistema Centralizado de Gestión de Costos para Servicios de IA (as co-advisor, main advisor Nicolás Lehmann)</span></div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Francisco Gutiérrez Albornoz</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Ampliación y unificación de servicios web en Codep</span></div>
     </li>
 
     <li>
@@ -773,7 +856,7 @@ details summary::-webkit-details-marker { display: none; }
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Alexander Reisenegger Meissner</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Sistema Centralizado de Gestión de Costos para Servicios de IA</span></div>
+      <div><strong>Diego Samuel Tapia Ramírez</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Diseño e implementación de un sistema de orquestación transaccional para la reestructuración y desvinculación financiera de clientes en una arquitectura SaaS multi-tenant</span></div>
     </li>
 
     <li>
@@ -783,47 +866,32 @@ details summary::-webkit-details-marker { display: none; }
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Ariel Ignacio Leon Soto</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Mejorando la privacidad en la Encuesta de Presupuestos Familiares</span></div>
+      <div><strong>Daniel Ramírez López</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Roadmap de educación</span></div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Andrés Gallardo</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Desarrollo de herramienta de balanceo de charts en Buk</span></div>
+      <div><strong>Ariel Ignacio Leon Soto</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Mejorando la privacidad en la Encuesta de Presupuestos Familiares (as co-advisor)</span></div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Constanza Almendra Pizarro Oyaneder</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Umlify: Diagramas de clases con exportación a código fuente Scala</span></div>
+      <div><strong>Martina Ignacia González Lucero</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Acelerando la Protección de Datos Censales: Versión Paralela del Algoritmo TopDown (as co-advisor, main advisor Federico Olmedo)</span></div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Felipe Avendaño Araya</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Prototipo de GQL en Rust</span></div>
+      <div><strong>Nicolás Rodrigo Arancibia Aguirre</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Gradual Typing para Python: extendiendo Tyger (co-advised with Éric Tanter)</span></div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Benjamín Ureta M.</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Desarrollo de página web para vinculación del DCC con el medio</span></div>
+      <div><strong>Juan I. Valdivia G.</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Extensión y mejora de una plataforma web y móvil para la gestión de cursos masivos con metodologías grupales (co-advised with Cristián Salazar)</span></div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Martina Ignacia González Lucero</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Acelerando la Protección de Datos Censales: Versión Paralela del Algoritmo TopDown</span></div>
-    </li>
-
-    <li>
-      <span class="level-badge">UG</span>
-      <div><strong>Nicolás Rodrigo Arancibia Aguirre</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Gradual Typing para Python: extendiendo Tyger</span></div>
-    </li>
-
-    <li>
-      <span class="level-badge">UG</span>
-      <div><strong>Benjamín Alonso Ibacache Allan</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Gradual Typing para Python: Privacidad de datos</span></div>
-    </li>
-
-    <li>
-      <span class="level-badge">UG</span>
-      <div><strong>Andrés Ignacio Calderón Guardia</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Extensión de Aplicación multiplataforma para la administración de cursos con salidas de terreno</span></div>
+      <div><strong>Andrés Ignacio Calderón Guardia</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Extensión de Aplicación multiplataforma para la administración de cursos con salidas de terreno (co-advised with Fernando Poblete)</span></div>
     </li>
 
     <li>
@@ -833,7 +901,7 @@ details summary::-webkit-details-marker { display: none; }
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Juan I. Valdivia G.</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Extensión y mejora de una plataforma web y móvil para la gestión de cursos masivos con metodologías grupales</span></div>
+      <div><strong>Felipe Avendaño Araya</strong> &mdash; <span style="font-size:0.85rem;color:var(--fg-muted)">Prototipo de GQL en Rust</span></div>
     </li>
   </ul>
 </details>
@@ -846,21 +914,42 @@ details summary::-webkit-details-marker { display: none; }
     <li>
       <span class="level-badge msc">MSc</span>
       <div>
-        <strong>Gaspar Ricci</strong>: Gradual Abstract Interpretation [co-advised with Éric Tanter]
+        <strong>Gaspar Ricci</strong>: Gradual Abstract Interpretation (2026) [co-advised with Éric Tanter]
       </div>
     </li>
 
     <li>
       <span class="level-badge msc">MSc</span>
       <div>
-        <strong>José L. Romero</strong>: A Compilation Framework for Gradually-Typed Languages [co-advised with Éric Tanter]
+        <strong>Benjamin Hurtado</strong>: Implementing a Decentralized Attribute-Based Messaging System with Partial Linkability Using Attribute-Based Signatures (2026) [co-advised with Federico Olmedo]
+      </div>
+    </li>
+
+    <li>
+      <span class="level-badge msc">MSc</span>
+      <div>
+        <strong>José L. Romero</strong>: A Compilation Framework for Gradually-Typed Languages (2026) [as co-advisor, main advisor Éric Tanter]
       </div>
     </li>
 
     <li>
       <span class="level-badge phd">PhD</span>
       <div>
-        <strong>Elizabeth Labrada</strong>: Gradual System F (2023) [co-advised with Éric Tanter]
+        <strong>Elizabeth Labrada</strong>: Gradual System F (2023) [as co-advisor, main advisor Éric Tanter]
+      </div>
+    </li>
+
+    <li>
+      <span class="level-badge msc">MSc</span>
+      <div>
+        <strong>Damián Nicolás Arquez Trigo</strong>: Gradual Sensitivity Types (2021) [as co-advisor, main advisor Éric Tanter]
+      </div>
+    </li>
+
+    <li>
+      <span class="level-badge msc">MSc</span>
+      <div>
+        <strong>Fabian Mosso</strong>: Countable Polymorphic May-Must Effects» (2020) [as co-advisor, main advisor Éric Tanter]
       </div>
     </li>
   </ul>
@@ -868,8 +957,23 @@ details summary::-webkit-details-marker { display: none; }
 
 
 <details>
-  <summary>Former Undergraduate Thesis Students (21)</summary>
+  <summary>Former Undergraduate Thesis Students (24)</summary>
   <ul class="student-list" style="padding-top:8px">
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Constanza Almendra Pizarro Oyaneder</strong>: Umlify: Diagramas de clases con exportación a código fuente Scala (2026)</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Benjamín Alonso Ibacache Allan</strong>: Gradual Typing para Python: Privacidad de datos (2026) [co-advised with Éric Tanter]</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Giusseppe Nicolás Rojas Rojas</strong>: TYGER: UN ACERCAMIENTO AL GRADUAL TYPING EN PYTHON (2026) [co-advised with Éric Tanter]</div>
+    </li>
 
     <li>
       <span class="level-badge">UG</span>
@@ -878,67 +982,67 @@ details summary::-webkit-details-marker { display: none; }
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Angelo Alexander Herrera Galaz</strong>: Gradual Typing para Python: semantica eficiente (2026)</div>
+      <div><strong>Angelo Alexander Herrera Galaz</strong>: Gradual Typing para Python: semantica eficiente (2026) [co-advised with Éric Tanter]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Jonnathan Stevens</strong>: Desarrollo de un Intérprete para un Lenguaje Gradual Probabilístico (2026)</div>
+      <div><strong>Jonnathan Stevens</strong>: Desarrollo de un Intérprete para un Lenguaje Gradual Probabilístico (2026) [co-advised with Federico Olmedo]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Giusseppe Nicolás Rojas Rojas</strong>: TYGER: UN ACERCAMIENTO AL GRADUAL TYPING EN PYTHON (2026)</div>
+      <div><strong>Benjamín Ureta M.</strong>: Desarrollo de página web para vinculación del DCC con el medio (2026) [as co-advisor, main advisor Adolfo Carrasco]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Arturo Felipe Kullmer Schuller</strong>: Manteniendo la privacidad en los censos nacionales (2025)</div>
+      <div><strong>Arturo Felipe Kullmer Schuller</strong>: Manteniendo la privacidad en los censos nacionales (2025) [as co-advisor, main advisor Federico Olmedo]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Cristóbal Ardiles Quiroz</strong>: TYGER: UNA HERRAMIENTA DE TIPADO ESTÁTICO EXTENSIBLE PARA PYTHON (2025)</div>
+      <div><strong>Cristóbal Ardiles Quiroz</strong>: TYGER: UNA HERRAMIENTA DE TIPADO ESTÁTICO EXTENSIBLE PARA PYTHON (2025) [as co-advisor, main advisor Éric Tanter]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Enzo Miguel Castillo Morales</strong>: ESTUDIO DE UN LENGUAJE GRADUAL CON SUBTIPOS NOMINALES (2025)</div>
+      <div><strong>Enzo Miguel Castillo Morales</strong>: ESTUDIO DE UN LENGUAJE GRADUAL CON SUBTIPOS NOMINALES (2025) [co-advised with Éric Tanter]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Kathleen Alexandra Köhler Ávila</strong>: Extensión de aplicación ERdoc (2025)</div>
+      <div><strong>Kathleen Alexandra Köhler Ávila</strong>: Extensión de aplicación ERdoc (2025) [co-advised with Aidan Hogan]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Martina Javiera Mora Lepin</strong>: Anonimización utilizando Abstract Interpretation (2025)</div>
+      <div><strong>Martina Javiera Mora Lepin</strong>: Anonimización utilizando Abstract Interpretation (2025) [co-advised with Federico Olmedo]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Martín Ignacio Ramírez Aravena</strong>: Gradual Typing para Python: plugin para IDE (2025)</div>
+      <div><strong>Martín Ignacio Ramírez Aravena</strong>: Gradual Typing para Python: plugin para IDE (2025) [co-advised with Éric Tanter]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Rodrigo Alexis Hidalgo Flores</strong>: Optimización y modernización de la infraestructura tecnológica de EmbedX con Kubernetes (2025)</div>
+      <div><strong>Romina Fernanda Yael Rodríguez Rodríguez</strong>: Aplicación multiplataforma para la administración de información confidencial en cursos con salidas a terreno (2025) [co-advised with Fernando Poblete]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Romina Fernanda Yael Rodríguez Rodríguez</strong>: Aplicación multiplataforma para la administración de información confidencial en cursos con salidas a terreno (2025)</div>
+      <div><strong>Sebastián Ricardo Bórquez Luarte</strong>: Desarrollo de una aplicación generadora de diagramas UML a partir de código fuente Scala (2025) [co-advised with Nancy Hitschfeld]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Sebastián Ricardo Bórquez Luarte</strong>: Desarrollo de una aplicación generadora de diagramas UML a partir de código fuente Scala (2025)</div>
+      <div><strong>Tomás Joaquín Rivas Acuña</strong>: Detección de vulnerabilidades de privacidad en la publicación de datos por parte de instituciones públicas (2025) [as co-advisor, main advisor Federico Olmedo]</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Tomás Joaquín Rivas Acuña</strong>: Detección de vulnerabilidades de privacidad en la publicación de datos por parte de instituciones públicas (2025)</div>
+      <div><strong>Jorge Andrés Cruces Ortiz</strong>: Typechecker enfocado a dimensionalidad de tensores: Soporte para NLP (2025) [co-advised with Éric Tanter]</div>
     </li>
 
     <li>
@@ -948,17 +1052,12 @@ details summary::-webkit-details-marker { display: none; }
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Jorge Andrés Cruces Ortiz</strong>: Typechecker enfocado a dimensionalidad de tensores: Soporte para NLP (2025)</div>
+      <div><strong>Rodrigo Alexis Hidalgo Flores</strong>: Optimización y modernización de la infraestructura tecnológica de EmbedX con Kubernetes (2025)</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Raúl Alexander Silva Astudillo</strong>: EXTENSIÓN DE EDUCÁNCER PARA SU APLICACIÓN EN DISTINTOS TIPOS DE CÁNCER (2024)</div>
-    </li>
-
-    <li>
-      <span class="level-badge">UG</span>
-      <div><strong>Tomás Ignacio Cortez Encina</strong>: Diseño e implementación de sistema de autenticación de usuarios conectando bases de datos preexistentes (2023)</div>
+      <div><strong>Bruno Germán Rodríguez Sepúlveda</strong>: CLUSTERING DIFERENCIALMENTE PRIVADO MEDIANTE LA GENERACION DE SINOPSIS PRIVADAS DE DATOS (2024) [as co-advisor, main advisor Federico Olmedo]</div>
     </li>
 
     <li>
@@ -968,12 +1067,17 @@ details summary::-webkit-details-marker { display: none; }
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Bruno Germán Rodríguez Sepúlveda</strong>: CLUSTERING DIFERENCIALMENTE PRIVADO MEDIANTE LA GENERACION DE SINOPSIS PRIVADAS DE DATOS (2024)</div>
+      <div><strong>Raúl Alexander Silva Astudillo</strong>: EXTENSIÓN DE EDUCÁNCER PARA SU APLICACIÓN EN DISTINTOS TIPOS DE CÁNCER (2024)</div>
     </li>
 
     <li>
       <span class="level-badge">UG</span>
-      <div><strong>Vicente Reyes Valdivieso</strong>: Estudio e implementación de un lenguaje de autorización para bases de datos relacionales (2023)</div>
+      <div><strong>Tomás Ignacio Cortez Encina</strong>: Diseño e implementación de sistema de autenticación de usuarios conectando bases de datos preexistentes (2023) [co-advised with Claudio Gutierrez]</div>
+    </li>
+
+    <li>
+      <span class="level-badge">UG</span>
+      <div><strong>Vicente Reyes Valdivieso</strong>: Estudio e implementación de un lenguaje de autorización para bases de datos relacionales (2023) [as co-advisor, main advisor Federico Olmedo]</div>
     </li>
   </ul>
 </details>
@@ -983,15 +1087,21 @@ details summary::-webkit-details-marker { display: none; }
 <div class="course-grid">
 
   <div class="course-card">
-    <div class="code">CC5003</div>
-    <div class="course-name">Aplicaciones Web Reactivas</div>
-    <div class="course-years">2026, 2025</div>
+    <div class="code">DPDCCPDP04</div>
+    <div class="course-name">Privacidad de Datos</div>
+    <div class="course-years">2026</div>
   </div>
 
   <div class="course-card">
     <div class="code">CC3002</div>
     <div class="course-name">Metodologías de Diseño y Programación</div>
     <div class="course-years">2026, 2025, 2024, 2023, 2022</div>
+  </div>
+
+  <div class="course-card">
+    <div class="code">CC5003</div>
+    <div class="course-name">Aplicaciones Web Reactivas</div>
+    <div class="course-years">2026, 2025</div>
   </div>
 
   <div class="course-card">
@@ -1003,7 +1113,7 @@ details summary::-webkit-details-marker { display: none; }
   <div class="course-card">
     <div class="code">CC3201</div>
     <div class="course-name">Bases de Datos</div>
-    <div class="course-years">2024, 2023, 2022</div>
+    <div class="course-years">2024, 2023, 2022, 2021, 2020</div>
   </div>
 </div>
 
@@ -1020,8 +1130,9 @@ details summary::-webkit-details-marker { display: none; }
   <span class="service-tag">OOPSLA 2027</span>
   <span class="service-tag">SPLASH Onward! Papers 2027</span>
   <span class="service-tag">POPL 2027 Program comittee</span>
-  <span class="service-tag">ICFP 2025</span>
   <span class="service-tag">PLDI 2025</span>
+  <span class="service-tag">ICFP 2025</span>
+  <span class="service-tag">Empirical Software Engineering. Revisor del artículo &quot;Empirical Study on the usage of Multi-lingual Development and programming language interoperability&quot;</span>
   <span class="service-tag">HOPE 2023 (Higher-Order Programming with Effects)</span>
   <span class="service-tag">Revision de paper Journal of Computer Languages (A Type Safe Generic Programming System)</span>
   <span class="service-tag">OOSPLA (2023) Committee Member in External Review / Artifact Evaluation Committee</span>
@@ -1046,17 +1157,17 @@ details summary::-webkit-details-marker { display: none; }
 
   <li>
     <div class="card-title">Miembro, Comité DCC: Ciberseguridad, Privacidad, y Digitalización</div>
-    <div class="card-meta">2025--present</div>
-  </li>
-
-  <li>
-    <div class="card-title">Miembro, Consejo de departamento</div>
-    <div class="card-meta">2024--present</div>
+    <div class="card-meta">2025</div>
   </li>
 
   <li>
     <div class="card-title">Miembro, CTD plan común</div>
     <div class="card-meta">2024</div>
+  </li>
+
+  <li>
+    <div class="card-title">Miembro, Consejo de departamento</div>
+    <div class="card-meta">2024--present</div>
   </li>
 
   <li>
@@ -1071,10 +1182,15 @@ details summary::-webkit-details-marker { display: none; }
 <ul class="card-list">
 
   <li>
+    <div class="card-title">Nueva ley de protección de datos: especialistas U. de Chile analizan sus desafíos en seguridad, IA y derechos</div>
+    <div class="card-meta">Noticias Universidad de Chile &middot; 2026</div>
+  </li>
+
+  <li>
     <div class="card-title">Programa: Sin Pretexto
 Conduce: Mirna Schindler
 Filtracion de datos en las instituciones publicas de Chile
-https://www.youtube.com/watch?v=1stCh5M8Nwc</div>
+</div>
     <div class="card-meta">Radio USACH &middot; 2026</div>
   </li>
 
@@ -1086,7 +1202,7 @@ https://www.youtube.com/watch?v=1stCh5M8Nwc</div>
   <li>
     <div class="card-title">Desayuno con prensa – Revista Bits
 Tema: presentación de técnicas de anonimización
-https://www.instagram.com/p/DYQqU69xpMl/</div>
+</div>
     <div class="card-meta">Distintos medios de comunicación &middot; 2026</div>
   </li>
 
