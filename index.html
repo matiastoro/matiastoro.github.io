@@ -275,17 +275,6 @@ main { padding: 0 var(--gutter); }
 .pub .soon { color: var(--vermilion-ink); font-family: var(--mono); font-size: 13px; }
 .pub:target h4 { text-decoration: underline; text-decoration-color: var(--amber); text-decoration-thickness: 3px; text-underline-offset: 5px; }
 
-/* Honours */
-.honours { background: var(--vermilion); color: #1B1A1F; margin: 0 calc(-1 * var(--gutter)); padding: 96px var(--gutter) 104px; }
-.honours .inner { max-width: 1240px; margin: 0 auto; }
-.honours h2 { font: 600 clamp(34px, 4.2vw, 52px)/1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
-.honours ol { margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px 48px; }
-.honours li { border-top: 2px solid #1B1A1F; padding-top: 16px; }
-.honours .what { font: 600 clamp(22px, 2vw, 28px)/1.2 var(--serif); }
-.honours .who { margin-top: 10px; }
-.honours a { color: inherit; text-decoration-color: rgba(27, 26, 31, .45); }
-.honours a:hover { text-decoration-color: #1B1A1F; }
-.honours :focus-visible { outline-color: #1B1A1F; }
 
 /* Students, projects, teaching */
 .roster li { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 2px 16px; padding: 16px 0; border-bottom: 1px solid var(--hair); }
@@ -373,14 +362,12 @@ details[open] { padding-bottom: 16px; }
   .roster .what, .roster .with { grid-column: 2; }
   .items li { grid-template-columns: 1fr; }
   .items .side { text-align: left; }
-  .honours { padding: 72px var(--gutter) 80px; }
 }
 
 @media print {
   .bar, .plate, .filters, .ridge { display: none !important; }
   .masthead { display: block; height: auto; }
   details > *:not(summary) { display: block; }
-  .honours { background: none; }
 }
 </style>
 </head>
@@ -676,17 +663,6 @@ details[open] { padding-bottom: 16px; }
   
   <p class="foot mono"><span><svg class="glyph t2" viewBox="0 0 12 12" role="img" aria-label="Privacy and security"><path d="M6 .5 11.5 11.5H.5Z"/></svg></span><span class="soon">To appear</span><span>[<a href="data:text/plain;charset=utf-8,%40inproceedings%7BmirandaAl%3Alaw2024%2C%0A%20%20author%20%3D%20%7BLuis%20Miranda%20and%20Jocelyn%20Dunstan%20and%20Mat%C3%ADas%20Toro%20and%20Federico%20Olmedo%20and%20Felix%20Melo%7D%2C%0A%20%20title%20%3D%20%7B%7BEvaluating%20Privacy%20Risks%20in%20Synthetic%20Clinical%20Text%20Generation%20in%20Spanish%7D%7D%2C%0A%20%20booktitle%20%3D%20%7BLatinX%20in%20AI%20Workshop%7D%2C%0A%20%20year%20%3D%20%7B2024%7D%0A%7D%0A" download="mirandaAl-law2024.bib">bib</a>]</span></p>
 </article></div>
-</div>
-</section>
-<section class="honours" aria-labelledby="honours-title">
-<div class="inner">
-  <h2 id="honours-title">Honours</h2>
-  <ol>
-    <li><p class="what">Distinguished Paper Award</p><p class="who mono">ACM, POPL 2019</p><p class="who"><a href="#p-cmkl61qr8000zlkj77m771eyc">Gradual parametricity, revisited</a></p></li>
-    <li><p class="what">Premio Marcos Orrego Puelma</p><p class="who mono">Instituto de Ingenieros de Chile · 2009</p></li>
-    <li><p class="what">First place, national ICPC 2006 contest</p><p class="who mono">ACM International Collegiate Programming Contest</p></li>
-    <li><p class="what">Outstanding student</p><p class="who mono">Universidad de Chile · 2002–2007</p></li>
-  </ol>
 </div>
 </section>
 <section class="section" id="students" aria-labelledby="students-title">
